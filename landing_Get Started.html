@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lyle Vincent Virtual Services</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        header {
+            background-color: #001f3f; /* Navy */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding:40px;
+            height: 80px;
+        }
+        .logo-container {
+            display: flex;          
+            align-items: center;
+            
+
+        }
+        .logo-img {
+            height: 50px;
+            width: 50px;
+            object-fit: contain;
+            margin-right: 15px;
+        }
+        .logo-text {
+            color: #fff;
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        nav ul {
+            list-style: none;
+            display: center;
+            align-items: right;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #ffdc00;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header">
+        <img src="logo2.png" alt="Logo" class="logo-img" style="height: 85px; width: 85px; border-radius: 50%; object-fit: cover;">
+        <div class="logo-text" style="margin-left: 0.1cm;">
+            <div style="display: flex; flex-direction: list; align-items: left; ">
+            <span style="font-family: 'Fair Display', Arial, sans-serif; font-size: 20px; color: #fff;">Virtual</span>
+            <span style="font-family: 'Fair Display', Arial, sans-serif; font-size: 20px; color: #eeede7;">Services</span>
+            </div>
+        </div>
+         <nav style="position: absolute; top: 35px; right: 50px; z-index: 2;"> 
+        <ul style="list-style: none; margin: 0; padding: 0; display: flex; gap: 35px;">
+            <li><a href="#" style="font-family: 'Fair Display', Arial, sans-serif; font-size: 22px; color: #fff; text-decoration: none; font-weight: bold; transition: color 0.2s;">Home</a></li>
+            <li><a href="#services" style="font-family: 'Fair Display', Arial, sans-serif; font-size: 22px; color: #fff; text-decoration: none; font-weight: bold; transition: color 0.2s;">Services</a></li>
+            <li><a href="#about" style="font-family: 'Fair Display', Arial, sans-serif; font-size: 22px; color: #fff; text-decoration: none; font-weight: bold; transition: color 0.2s;">About</a></li>
+            <li><a href="#contact" style="font-family: 'Fair Display', Arial, sans-serif; font-size: 22px; color: #fff; text-decoration: none; font-weight: bold; transition: color 0.2s;">Contact</a></li>
+            </ul>
+        <li style="display: flex; align-items: center; margin-top: 10px;">
+            <img src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/svgs/solid/envelope.svg" alt="Email" style="width:22px; height:22px; margin-right:8px; filter: invert(1);">
+            <span style="font-family: Arial, sans-serif; font-size: 18px; color: #fff;">contact@lylevincent.info</span>
+        </li>
+        <li style="display: flex; align-items: center; margin-top: 8px;">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg" alt="WhatsApp" style="width:22px; height:22px; margin-right:8px; filter: invert(38%) sepia(98%) saturate(749%) hue-rotate(85deg) brightness(95%) contrast(92%);">
+            <span style="font-family: Arial, sans-serif; font-size: 18px; color: #fff;">+639055558430</span>
+        </li>
+        </ul>
+    </nav>
+    </header>
+    <main style="display: flex; justify-content: center; align-items: flex-start; margin-top: 40px; position: relative;">
+        <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+            <h2 id="animated-text" style="font-family: 'Fair Display', Arial, sans-serif; font-size: 2.2rem; color: #001f3f; margin-bottom: 30px; text-align: center; min-height: 60px;">
+                <!-- Animation will appear here -->
+            </h2>
+        </div>
+        <div style="width: 400px; background: #fff; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.09); padding: 32px 28px; position: absolute; right: 50px; top: 0;">
+            <form>
+                <label for="fullname" style="font-weight: 600; color: #001f3f;">Full Name</label><br>
+                <input type="text" id="fullname" name="fullname" required style="width: 100%; padding: 10px; margin-bottom: 18px; border-radius: 6px; border: 1px solid #ccc;"><br>
+                <label for="email" style="font-weight: 600; color: #001f3f;">Email Address</label><br>
+                <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; margin-bottom: 18px; border-radius: 6px; border: 1px solid #ccc;"><br>
+                <label for="message" style="font-weight: 600; color: #001f3f;">Message</label><br>
+                <textarea id="message" name="message" rows="4" required style="width: 100%; padding: 10px; margin-bottom: 22px; border-radius: 6px; border: 1px solid #ccc;"></textarea><br>
+                <button type="submit" style="background: #001f3f; color: #fff; font-size: 1.1rem; font-weight: bold; border: none; border-radius: 6px; padding: 12px 0; width: 100%; cursor: pointer; transition: background 0.2s;">Submit</button>
+                <input type="hidden" name="to" value="contact@lylevincent.info">
+                <p style="font-size: 0.95rem; color: #888; margin-top: 12px;">We'll get back to you at your email address.</p>
+            </form>
+        </div>
+    </main>
+    <script>
+    const texts = [
+        "Fill out the Form or Schedule an appointment.",
+        "We're here to help you succeed!",
+        "Contact us today."
+    ];
+    let idx = 0, char = 0, isDeleting = false, current = '';
+    function animateText() {
+        const el = document.getElementById('animated-text');
+        if (!el) return;
+        if (!isDeleting && char <= texts[idx].length) {
+            current = texts[idx].substring(0, char++);
+            el.textContent = current;
+            setTimeout(animateText, 60);
+        } else if (isDeleting && char >= 0) {
+            current = texts[idx].substring(0, char--);
+            el.textContent = current;
+            setTimeout(animateText, 30);
+        } else {
+            if (!isDeleting) {
+                isDeleting = true;
+                setTimeout(animateText, 1200);
+            } else {
+                isDeleting = false;
+                idx = (idx + 1) % texts.length;
+                setTimeout(animateText, 500);
+            }
+        }
+    }
+    animateText();
+    </script>
+    <script>
+        // Move the form container below the animated text
+        window.addEventListener('DOMContentLoaded', function() {
+            const main = document.querySelector('main');
+            const formContainer = main.querySelector('div[style*="background: #fff"]');
+            const textContainer = main.querySelector('div[style*="flex-direction: column"]');
+            if (formContainer && textContainer) {
+                textContainer.appendChild(formContainer);
+                formContainer.style.position = 'static';
+                formContainer.style.right = '';
+                formContainer.style.top = '';
+                formContainer.style.marginTop = '30px';
+                formContainer.style.width = '100%';
+                formContainer.style.maxWidth = '400px';
+            }
+        });
+    </script>
+
+        <hr style="margin: 40px auto 30px auto; width: 90%; border: 0; border-top: 2px solid #e0e0e0;">
+
+        <div style="display: flex; flex-direction: column; align-items: center; margin-top: 30px;">
+            <h3 style="font-family: 'Fair Display', Arial, sans-serif; color: #001f3f; font-size: 1.5rem; margin-bottom: 18px;">
+                Schedule an Appointment
+            </h3>
+<!-- Google Calendar Appointment Scheduling begin -->
+<iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2jaxEIVOZc0xY8uuVub6BVlkqlnIjK7pT1OsNTe_mIxrx_UU_Nxbs6XI3YXKlplGVa60qtkh1r?gv=true" style="border: 0; width: 100%; height: 600px;" frameborder="0" scrolling="yes"></iframe>
+
+<!-- end Google Calendar Appointment Scheduling -->
+        </div>
+        <footer style="text-align: center; margin-top: 40px; padding: 20px; background-color: #001f3f; color: #fff;">
+            <p style="margin: 0;">&copy; 2025 Lyle Vincent Virtual Services. All rights reserved.</p>
+            <p style="margin: 0;">Follow us on <a href="https://www.facebook.com/lyle.vincent.7" style="color: #ffdc00; text-decoration: none;">Facebook</a> and <a href="https://www.linkedin.com/in/lyle-vincent-8b6b1b1b2/" style="color: #ffdc00; text-decoration: none;">LinkedIn</a>.</p>
+        </footer>
+    </div>
+    </header>
+</body>
+</html>
+<!-- Chatbox Widget -->
+<style>
+#chatbox-container {
+    position: fixed;
+    bottom: 28px;
+    right: 32px;
+    z-index: 9999;
+    font-family: Arial, sans-serif;
+}
+#chatbox-header {
+    background: #001f3f;
+    color: #fff;
+    padding: 13px 22px;
+    border-radius: 16px 16px 0 0;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+#chatbox-body {
+    display: none;
+    background: #fff;
+    border-radius: 0 0 16px 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+    width: 320px;
+    max-width: 90vw;
+    padding: 0;
+    overflow: hidden;
+}
+#chat-messages {
+    height: 220px;
+    overflow-y: auto;
+    padding: 16px;
+    background: #f7f8fa;
+    border-bottom: 1px solid #e0e0e0;
+}
+#chat-form {
+    display: flex;
+    border-top: 1px solid #e0e0e0;
+    background: #fff;
+    padding: 10px;
+    gap: 8px;
+}
+#chat-input {
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    padding: 7px 10px;
+    font-size: 1rem;
+}
+#chat-send-btn {
+    background: #001f3f;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    padding: 7px 16px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+#chat-send-btn:hover {
+    background: #003366;
+}
+</style>
+<div id="chatbox-container">
+    <div id="chatbox-header">
+        <img src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/svgs/solid/comment-dots.svg" alt="Chat" style="width:22px; height:22px; filter: invert(1);">
+        Chat with us!
+    </div>
+    <div id="chatbox-body">
+        <div id="chat-messages"></div>
+        <form id="chat-form" autocomplete="off">
+            <input type="text" id="chat-input" placeholder="Type your message..." autocomplete="off" />
+            <button type="submit" id="chat-send-btn">Send</button>
+        </form>
+    </div>
+</div>
+<script>
+const chatHeader = document.getElementById('chatbox-header');
+const chatBody = document.getElementById('chatbox-body');
+const chatForm = document.getElementById('chat-form');
+const chatInput = document.getElementById('chat-input');
+const chatMessages = document.getElementById('chat-messages');
+
+chatHeader.onclick = () => {
+    chatBody.style.display = chatBody.style.display === 'none' ? 'block' : 'none';
+};
+
+function appendMessage(text, sender = 'user') {
+    const msg = document.createElement('div');
+    msg.style.margin = '6px 0';
+    msg.style.textAlign = sender === 'user' ? 'right' : 'left';
+    msg.innerHTML = `<span style="display:inline-block; background:${sender==='user'?'#001f4d':'#e6e6e6'}; color:${sender==='user'?'#fff':'#001f4d'}; border-radius:8px; padding:7px 13px; max-width:75%; word-break:break-word;">${text}</span>`;
+    chatMessages.appendChild(msg);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+// Optional: greet on open
+chatHeader.addEventListener('click', function() {
+    if (chatBody.style.display === 'block' && !chatMessages.hasChildNodes()) {
+        setTimeout(() => appendMessage("Hi! 👋 How can I help you today?", 'bot'), 300);
+        let step = 0;
+        let userName = '';
+        let userEmail = '';
+
+        function askName() {
+            appendMessage("What's your name?", 'bot');
+            step = 1;
+        }
+
+        function askEmail() {
+            appendMessage(`Nice to meet you, ${userName}! What's your email address?`, 'bot');
+            step = 2;
+        }
+
+        function finishIntro() {
+            appendMessage(`Thank you, ${userName}! We'll reach out to you at ${userEmail}. How can I assist you today?`, 'bot');
+            // Send to email via Formspree or EmailJS (example with Formspree)
+            fetch('https://formspree.io/f/xwkgyyqg', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: userName,
+                    email: userEmail,
+                    message: 'Chatbot intro from website'
+                })
+            });
+            step = 3;
+        }
+
+        chatForm.onsubmit = function(e) {
+            e.preventDefault();
+            const userMsg = chatInput.value.trim();
+            if (!userMsg) return;
+            appendMessage(userMsg, 'user');
+            chatInput.value = '';
+
+            if (step === 1) {
+                userName = userMsg;
+                setTimeout(askEmail, 600);
+                return;
+            }
+            if (step === 2) {
+                userEmail = userMsg;
+                setTimeout(finishIntro, 600);
+                return;
+            }
+            setTimeout(() => {
+                let reply = "Thank you for your message! We'll get back to you soon.";
+                if (/hello|hi|hey/i.test(userMsg)) reply = "Hello! How can I assist you today?";
+                else if (/service|offer/i.test(userMsg)) reply = "We offer a range of virtual business services. What are you interested in?";
+                else if (/contact|email|phone/i.test(userMsg)) reply = "You can contact us via the Contact section or this chat!";
+                appendMessage(reply, 'bot');
+            }, 700);
+        };
+
+        setTimeout(askName, 800);
+    }
+});
+</script>

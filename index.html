@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lyle Vincent Virtual Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .video-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100vw;
+            min-height: 50vh;
+            width: 100vw;
+            height: 80vh;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.8; 
+            filter: blur(10px);
+        }
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            z-index: 100;
+            background: rgba(0, 31, 77, 0.85);
+            height: 110px;
+            display: flex;
+            align-items: center;
+            padding-left: 40px;
+            padding: 20px;
+            z-index: 1;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            backdrop-filter: blur(4px);
+        }
+        .logo-img {
+            height: 50px;
+            width: 65px;
+            margin-right: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            object-fit: flex; 
+        }
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+            margin-top: 10px;
+        }
+        .logo-main {
+            font-family: 'Fair Display', Arial, sans-serif;
+            font-size: 35px;
+            color: #fff;
+            font-weight: bold;
+            line-height: 1;
+        }
+        .logo-sub {
+            font-family: Arial, sans-serif;
+            font-size: 25px;
+            color: #fff;
+            font-weight: normal;
+            line-height: 1;
+            margin-top: 1;
+        }
+        .center-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255,255,255,0.7);
+            padding: 40px 50px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+            text-align: center;
+            z-index: 2;
+        }
+        .center-content .line1 {
+            font-family: 'Fair Display', Arial, sans-serif;
+            font-size: 35px;
+            color: #001f4d;
+            margin-bottom: 18px;
+            font-weight: bold;
+        }
+        .center-content .line2 {
+            font-family: 'Fair Display', Arial, sans-serif;
+            font-size: 30px;
+            color: #001f4d;
+            margin-bottom: 28px;
+            font-weight: bold;
+        }
+        .center-content .get-started-btn {
+            font-family: 'Fair Display', Arial, sans-serif;
+            font-size: 25px;
+            color: #fff;
+            background: #001f4d;
+            border: none;
+            border-radius: 8px;
+            padding: 14px 38px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .center-content .get-started-btn:hover {
+            background: #003080;
+        }
+    </style>
+</head>
+<body>
+    <video class="video-bg" autoplay muted loop playsinline>
+        <source src="aabbbccdddmp4.mp4" type="video/mp4"> 
+    </video>
+    <div class="header">
+        <img src="logo2.png" alt="Logo" class="logo-img" style="height: 85px;width:100px;">
+        <div class="logo-text" style="margin: left 0.1cm;">
+            <span class="logo-main">Virtual</span>
+            <span class="logo-sub">Services</span>
+        </div>
+    </div>
+    <div class="center-content" style="background: none; box-shadow: none;">
+        <div class="line1" id="autoplay-text" style="font-family: 'Fair Display', Arial, sans-serif; font-weight: bold;"></div>
+        <script>
+        const texts = [
+            "I streamline the workflow;", 
+            "I deliver results;",
+            "I am not just providing service;",
+        ];
+        let idx = 0;
+        const el = document.getElementById('autoplay-text');
+        function showText() {
+            el.textContent = texts[idx];
+            el.classList.remove('animated-text');
+            void el.offsetWidth; // trigger reflow for animation
+            el.classList.add('animated-text');
+            idx = (idx + 1) % texts.length;
+        }
+        showText();
+        setInterval(showText, 2200);
+        </script>
+        <div class="line2 animated-text">I am your trusted business Ally</div> 
+        <script>
+        document.addEventListener('scroll', function() {
+            const centerContent = document.querySelector('.center-content');
+            const scrollY = window.scrollY;
+            if (scrollY > 0) {
+                centerContent.style.position = 'fixed';
+                centerContent.style.top = '50%';
+                centerContent.style.left = '50%';
+                centerContent.style.transform = 'translate(-50%, -50%)';
+            } else {
+                centerContent.style.position = 'absolute';
+                centerContent.style.top = '50%';
+                centerContent.style.left = '50%';
+                centerContent.style.transform = 'translate(-50%, -50%)';
+            }
+        });
+        </script>
+        <style>
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animated-text {
+            animation: fadeInUp 1.2s ease-out;
+        }
+        </style>
+        <button class="get-started-btn" style="margin-top: 1in;">Get Started</button> 
+    </div>
+    <nav style="position: absolute; top: 35px; right: 50px; z-index: 2;">
+        <ul style="list-style: none; margin: 0; padding: 0; display: flex; gap: 35px;">
+            <li><a href="#" style="font-family: 'Fair Display', Arial, sans-serif; font-size: 22px; color: #fff; text-decoration: none; font-weight: bold; transition: color 0.2s;">Home</a></li>
+            <li><a href="#services" style="font-family: 'Fair Display', Arial, sans-serif; font-size: 22px; color: #fff; text-decoration: none; font-weight: bold; transition: color 0.2s;">Services</a></li>
+            <li><a href="#about" style="font-family: 'Fair Display', Arial, sans-serif; font-size: 22px; color: #fff; text-decoration: none; font-weight: bold; transition: color 0.2s;">About</a></li>
+            <li><a href="#contact" style="font-family: 'Fair Display', Arial, sans-serif; font-size: 22px; color: #fff; text-decoration: none; font-weight: bold; transition: color 0.2s;">Contact</a></li>
+            </ul>
+        <li style="display: flex; align-items: center; margin-top: 10px;">
+            <img src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/svgs/solid/envelope.svg" alt="Email" style="width:22px; height:22px; margin-right:8px; filter: invert(1);">
+            <span style="font-family: Arial, sans-serif; font-size: 18px; color: #fff;">contact@lylevincent.info</span>
+        </li>
+        <li style="display: flex; align-items: center; margin-top: 8px;">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg" alt="WhatsApp" style="width:22px; height:22px; margin-right:8px; filter: invert(38%) sepia(98%) saturate(749%) hue-rotate(85deg) brightness(95%) contrast(92%);">
+            <span style="font-family: Arial, sans-serif; font-size: 18px; color: #fff;">+639055558430</span>
+        </li>
+        </ul>
+    </nav>
+<a href="landing_contact.html">Contact Us</a>
+<script>
+document.querySelectorAll('a[href="#contact"]').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.open('landing_Get Started.html', '_blank');
+    });
+});
+document.querySelectorAll('a[href="#about"]').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.open('landing_About ME.html', '_blank');
+    });
+});
+document.querySelector('.get-started-btn').addEventListener('click', function() {
+    window.open('landing_Get Started.html', '_blank');
+    this.textContent = 'Loading...';
+});
+</script>
+</body>
+</html>
+
+<footer style="position: fixed; bottom: 0; left: 0; width: 100vw; background: rgba(0,31,77,0.95); color: #fff; display: flex; justify-content: space-between; align-items: center; padding: 18px 50px 18px 50px; font-family: Arial, sans-serif; font-size: 18px; z-index: 10; box-shadow: 0 -2px 12px rgba(0,0,0,0.08);">
+    <div>
+        © 2025 Lyle Vincent. All Rights Reserved.
+    </div>
+    <div style="display: flex; gap: 28px; padding-left: 28px; padding-right: 28px;"></div>
+        <a href="https://www.facebook.com/profile.php?viewas=100000686899395&id=61562514758360" target="_blank" rel="noopener" title="Facebook" style="color: #fff; text-decoration: none;">
+            <svg width="28" height="28" viewBox="0 0 32 32" fill="currentColor"><path d="M29 0h-26c-1.7 0-3 1.3-3 3v26c0 1.7 1.3 3 3 3h13v-12h-4v-5h4v-4c0-4.1 2.5-6.3 6.1-6.3 1.8 0 3.6.3 3.6.3v4h-2c-2 0-2.6 1.2-2.6 2.5v3h5l-1 5h-4v12h7c1.7 0 3-1.3 3-3v-26c0-1.7-1.3-3-3-3z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/lc544w/" target="_blank" rel="noopener" title="Instagram" style="color: #fff; text-decoration: none;">
+            <svg width="28" height="28" viewBox="0 0 32 32" fill="currentColor"><path d="M16 7.3a8.7 8.7 0 1 0 0 17.4 8.7 8.7 0 0 0 0-17.4zm0 14.3a5.6 5.6 0 1 1 0-11.2 5.6 5.6 0 0 1 0 11.2zm10.9-14.5a2.1 2.1 0 1 1-4.2 0 2.1 2.1 0 0 1 4.2 0zm6 2.1c-.1-2.1-.6-4-2.1-5.5s-3.4-2-5.5-2.1c-2.2-.1-8.7-.1-10.9 0-2.1.1-4 .6-5.5 2.1s-2 3.4-2.1 5.5c-.1 2.2-.1 8.7 0 10.9.1 2.1.6 4 2.1 5.5s3.4 2 5.5 2.1c2.2.1 8.7.1 10.9 0 2.1-.1 4-.6 5.5-2.1s2-3.4 2.1-5.5c.1-2.2.1-8.7 0-10.9zm-3.8 13.2a5.9 5.9 0 0 1-3.3 3.3c-2.3.9-7.7.7-10.3.7s-8 .2-10.3-.7a5.9 5.9 0 0 1-3.3-3.3c-.9-2.3-.7-7.7-.7-10.3s-.2-8 .7-10.3a5.9 5.9 0 0 1 3.3-3.3c2.3-.9 7.7-.7 10.3-.7s8-.2 10.3.7a5.9 5.9 0 0 1 3.3 3.3c.9 2.3.7 7.7.7 10.3s.2 8-.7 10.3z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/lyle-vincent-cede%C3%B1o-197131218/" target="_blank" rel="noopener" title="LinkedIn" style="color: #fff; text-decoration: none;">
+            <svg width="28" height="28" viewBox="0 0 32 32" fill="currentColor"><path d="M29 0h-26c-1.7 0-3 1.3-3 3v26c0 1.7 1.3 3 3 3h26c1.7 0 3-1.3 3-3v-26c0-1.7-1.3-3-3-3zm-18 27h-5v-14h5v14zm-2.5-16.1c-1.6 0-2.5-1.1-2.5-2.4 0-1.4 1-2.4 2.6-2.4s2.5 1 2.5 2.4c0 1.3-.9 2.4-2.6 2.4zm19.5 16.1h-5v-7c0-1.7-.6-2.8-2.1-2.8-1.1 0-1.7.7-2 1.4-.1.2-.1.5-.1.8v7.6h-5s.1-12.3 0-14h5v2c.7-1.1 2-2.7 4.8-2.7 3.5 0 6.2 2.3 6.2 7.2v7.5z"/></svg>
+        </a>
+    </div>
+    <!-- Chat Box -->
+    <div id="chatbox-container" style="position: fixed; bottom: 90px; right: 40px; z-index: 1000; font-family: Arial, sans-serif;">
+        <div id="chatbox-header" style="background: #001f4d; color: #fff; padding: 12px 18px; border-radius: 12px 12px 0 0; cursor: pointer; font-size: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+            💬 Chat with us
+        </div>
+        <div id="chatbox-body" style="display: none; width: 320px; background: #fff; border-radius: 0 0 12px 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.15); max-height: 350px; overflow-y: auto; padding: 18px 14px 14px 14px;">
+            <div id="chat-messages" style="min-height: 120px; margin-bottom: 12px; font-size: 16px;"></div>
+            <form id="chat-form" style="display: flex; gap: 8px;">
+                <input type="text" id="chat-input" placeholder="Type your message..." autocomplete="off" style="flex: 1; padding: 8px 10px; border-radius: 6px; border: 1px solid #ccc; font-size: 15px;">
+                <button type="submit" style="background: #001f4d; color: #fff; border: none; border-radius: 6px; padding: 8px 16px; font-weight: bold; cursor: pointer;">Send</button>
+            </form>
+        </div>
+    </div>
+    <script>
+    const chatHeader = document.getElementById('chatbox-header');
+    const chatBody = document.getElementById('chatbox-body');
+    const chatForm = document.getElementById('chat-form');
+    const chatInput = document.getElementById('chat-input');
+    const chatMessages = document.getElementById('chat-messages');
+
+    chatHeader.onclick = () => {
+        chatBody.style.display = chatBody.style.display === 'none' ? 'block' : 'none';
+    };
+
+    function appendMessage(text, sender = 'user') {
+        const msg = document.createElement('div');
+        msg.style.margin = '6px 0';
+        msg.style.textAlign = sender === 'user' ? 'right' : 'left';
+        msg.innerHTML = `<span style="display:inline-block; background:${sender==='user'?'#001f4d':'#e6e6e6'}; color:${sender==='user'?'#fff':'#001f4d'}; border-radius:8px; padding:7px 13px; max-width:75%; word-break:break-word;">${text}</span>`;
+        chatMessages.appendChild(msg);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    chatForm.onsubmit = function(e) {
+        e.preventDefault();
+        const userMsg = chatInput.value.trim();
+        if (!userMsg) return;
+        appendMessage(userMsg, 'user');
+        chatInput.value = '';
+        setTimeout(() => {
+            // Simple bot reply
+            let reply = "Thank you for your message! We'll get back to you soon.";
+            if (/hello|hi|hey/i.test(userMsg)) reply = "Hello! How can I assist you today?";
+            else if (/service|offer/i.test(userMsg)) reply = "We offer a range of virtual business services. What are you interested in?";
+            else if (/contact|email|phone/i.test(userMsg)) reply = "You can contact us via the Contact section or this chat!";
+            appendMessage(reply, 'bot');
+        }, 700);
+    };
+
+    // Optional: greet on open
+    chatHeader.addEventListener('click', function() {
+        if (chatBody.style.display === 'block' && !chatMessages.hasChildNodes()) {
+            setTimeout(() => appendMessage("Hi! 👋 How can I help you today?", 'bot'), 300);
+            let step = 0;
+            let userName = '';
+            let userEmail = '';
+
+            function askName() {
+                appendMessage("What's your name?", 'bot');
+                step = 1;
+            }
+
+            function askEmail() {
+                appendMessage(`Nice to meet you, ${userName}! What's your email address?`, 'bot');
+                step = 2;
+            }
+
+            function finishIntro() {
+                appendMessage(`Thank you, ${userName}! We'll reach out to you at ${userEmail}. How can I assist you today?`, 'bot');
+                // Send to email via Formspree or EmailJS (example with Formspree)
+                fetch('https://formspree.io/f/xwkgyyqg', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        name: userName,
+                        email: userEmail,
+                        message: 'Chatbot intro from website'
+                    })
+                });
+                step = 3;
+            }
+
+            chatForm.onsubmit = function(e) {
+                e.preventDefault();
+                const userMsg = chatInput.value.trim();
+                if (!userMsg) return;
+                appendMessage(userMsg, 'user');
+                chatInput.value = '';
+
+                if (step === 1) {
+                    userName = userMsg;
+                    setTimeout(askEmail, 600);
+                    return;
+                }
+                if (step === 2) {
+                    userEmail = userMsg;
+                    setTimeout(finishIntro, 600);
+                    return;
+                }
+                setTimeout(() => {
+                    let reply = "Thank you for your message! We'll get back to you soon.";
+                    if (/hello|hi|hey/i.test(userMsg)) reply = "Hello! How can I assist you today?";
+                    else if (/service|offer/i.test(userMsg)) reply = "We offer a range of virtual business services. What are you interested in?";
+                    else if (/contact|email|phone/i.test(userMsg)) reply = "You can contact us via the Contact section or this chat!";
+                    appendMessage(reply, 'bot');
+                }, 700);
+            };
+
+            setTimeout(askName, 800);
+        }
+    });
+    </script>
+    <!-- Link to landing_Get Started.html page in the footer -->
+    <div>
+        <a href="landing_Get Started.html" style="color: #fff; text-decoration: underline; font-size: 18px; margin-left: 24px;" target="_blank" rel="noopener"> 
+    </div>
+
+</footer>
