@@ -1,15 +1,161 @@
-<!-- Add this link/button in your landing_Get Started.html file to connect to landing_contact.html -->
-<a href="landing_contact.html">Contact Us</a>
-</div>
-    <!-- Chat Box -->
-    <div id="chatbox-container" style="position: fixed; bottom: 90px; right: 40px; z-index: 1000; font-family: Arial, sans-serif;">
-        <div id="chatbox-header" style="background: #001f4d; color: #fff; padding: 12px 18px; border-radius: 12px 12px 0 0; cursor: pointer; font-size: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
-            💬 Chat with us
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact - Lyle Vincent Virtual Services</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        header {
+            background-color: #001f3f; /* Navy */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding:40px;
+            height: 80px;
+        }
+        .logo-container {
+            display: flex;          
+            align-items: center;
+        }
+        .logo-img {
+            height: 50px;
+            width: 50px;
+            object-fit: contain;
+            margin-right: 15px;
+        }
+        .logo-text {
+            color: #fff;
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        nav ul {
+            list-style: none;
+            display: center;
+            align-items: right;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #ffdc00;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header">
+        <img src="logo2.png" alt="Logo" class="logo-img" style="height: 85px; width: 85px; border-radius: 50%; object-fit: cover;">
+        <div class="logo-text" style="margin-left: 0.1cm;">
+            <div style="display: flex; flex-direction: list; align-items: left; ">
+            <span style="font-family: 'Fair Display', Arial, sans-serif; font-size: 20px; color: #fff;">Virtual</span>
+            <span style="font-family: 'Fair Display', Arial, sans-serif; font-size: 20px; color: #eeede7;">Services</span>
+            </div>
         </div>
-        <div id="chatbox-body" style="display: none; width: 320px; background: #fff; border-radius: 0 0 12px 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.15); max-height: 350px; overflow-y: auto; padding: 18px 14px 14px 14px;">
-            <div id="chat-messages" style="min-height: 120px; margin-bottom: 12px; font-size: 16px;"></div>
-            <form id="chat-form" style="display: flex; gap: 8px;">
-                <input type="text" id="chat-input" placeholder="Type your message..." autocomplete="off" style="flex: 1; padding: 8px 10px; border-radius: 6px; border: 1px solid #ccc; font-size: 15px;">
-                <button type="submit" style="background: #001f4d; color: #fff; border: none; border-radius: 6px; padding: 8px 16px; font-weight: bold; cursor: pointer;">Send</button>
-            </form> 
-        
+         <nav style="position: absolute; top: 35px; right: 50px; z-index: 2;"> 
+        <ul style="list-style: none; margin: 0; padding: 0; display: flex; gap: 35px;">
+            <li><a href="index.html" style="font-family: 'Fair Display', Arial, sans-serif; font-size: 22px; color: #fff; text-decoration: none; font-weight: bold; transition: color 0.2s;">Home</a></li>
+            <li><a href="landing_Get Started.html" style="font-family: 'Fair Display', Arial, sans-serif; font-size: 22px; color: #fff; text-decoration: none; font-weight: bold; transition: color 0.2s;">Services</a></li>
+            <li><a href="landing_About Me.html" style="font-family: 'Fair Display', Arial, sans-serif; font-size: 22px; color: #fff; text-decoration: none; font-weight: bold; transition: color 0.2s;">About</a></li>
+            <li><a href="#contact" style="font-family: 'Fair Display', Arial, sans-serif; font-size: 22px; color: #fff; text-decoration: none; font-weight: bold; transition: color 0.2s;">Contact</a></li>
+        </ul>
+        <li style="display: flex; align-items: center; margin-top: 10px;">
+            <img src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/svgs/solid/envelope.svg" alt="Email" style="width:22px; height:22px; margin-right:8px; filter: invert(1);">
+            <span style="font-family: Arial, sans-serif; font-size: 18px; color: #fff;">contact@lylevincent.info</span>
+        </li>
+        <li style="display: flex; align-items: center; margin-top: 8px;">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg" alt="WhatsApp" style="width:22px; height:22px; margin-right:8px; filter: invert(38%) sepia(98%) saturate(749%) hue-rotate(85deg) brightness(95%) contrast(92%);">
+            <span style="font-family: Arial, sans-serif; font-size: 18px; color: #fff;">+639055558430</span>
+        </li>
+    </nav>
+    </header>
+    
+    <main style="display: flex; justify-content: center; align-items: flex-start; margin-top: 40px; position: relative;">
+        <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+            <h1 style="font-family: 'Fair Display', Arial, sans-serif; font-size: 2.5rem; color: #001f3f; margin-bottom: 20px; text-align: center;">
+                Contact Us
+            </h1>
+            <p style="font-family: Arial, sans-serif; font-size: 1.2rem; color: #475869; text-align: center; max-width: 600px; margin-bottom: 40px;">
+                Get in touch with us today and let's discuss how we can help your business succeed.
+            </p>
+        </div>
+    </main>
+
+    <section style="display: flex; justify-content: center; align-items: flex-start; margin-top: 20px; padding: 0 40px;">
+        <div style="display: flex; gap: 40px; max-width: 1200px; width: 100%;">
+            <!-- Contact Form -->
+            <div style="flex: 1; background: #fff; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.09); padding: 32px 28px;">
+                <h2 style="font-family: 'Fair Display', Arial, sans-serif; color: #001f3f; margin-bottom: 24px;">Send us a message</h2>
+                <form action="https://formspree.io/f/xwkgyyqg" method="POST">
+                    <label for="fullname" style="font-weight: 600; color: #001f3f; display: block; margin-bottom: 8px;">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" required style="width: 100%; padding: 12px; margin-bottom: 18px; border-radius: 6px; border: 1px solid #ccc; font-size: 16px; box-sizing: border-box;">
+                    
+                    <label for="email" style="font-weight: 600; color: #001f3f; display: block; margin-bottom: 8px;">Email Address</label>
+                    <input type="email" id="email" name="email" required style="width: 100%; padding: 12px; margin-bottom: 18px; border-radius: 6px; border: 1px solid #ccc; font-size: 16px; box-sizing: border-box;">
+                    
+                    <label for="subject" style="font-weight: 600; color: #001f3f; display: block; margin-bottom: 8px;">Subject</label>
+                    <input type="text" id="subject" name="subject" required style="width: 100%; padding: 12px; margin-bottom: 18px; border-radius: 6px; border: 1px solid #ccc; font-size: 16px; box-sizing: border-box;">
+                    
+                    <label for="message" style="font-weight: 600; color: #001f3f; display: block; margin-bottom: 8px;">Message</label>
+                    <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 12px; margin-bottom: 22px; border-radius: 6px; border: 1px solid #ccc; font-size: 16px; box-sizing: border-box; resize: vertical;"></textarea>
+                    
+                    <button type="submit" style="background: #001f3f; color: #fff; font-size: 1.1rem; font-weight: bold; border: none; border-radius: 6px; padding: 14px 0; width: 100%; cursor: pointer; transition: background 0.2s;">
+                        Send Message
+                    </button>
+                    <p style="font-size: 0.95rem; color: #888; margin-top: 12px; text-align: center;">We'll get back to you within 24 hours.</p>
+                </form>
+            </div>
+
+            <!-- Contact Information -->
+            <div style="flex: 1; background: #fff; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.09); padding: 32px 28px;">
+                <h2 style="font-family: 'Fair Display', Arial, sans-serif; color: #001f3f; margin-bottom: 24px;">Get in touch</h2>
+                
+                <div style="margin-bottom: 24px;">
+                    <h3 style="font-family: 'Fair Display', Arial, sans-serif; color: #001f3f; font-size: 1.2rem; margin-bottom: 8px;">Email</h3>
+                    <p style="color: #475869; margin: 0;">contact@lylevincent.info</p>
+                </div>
+                
+                <div style="margin-bottom: 24px;">
+                    <h3 style="font-family: 'Fair Display', Arial, sans-serif; color: #001f3f; font-size: 1.2rem; margin-bottom: 8px;">Phone</h3>
+                    <p style="color: #475869; margin: 0;">+639055558430</p>
+                </div>
+                
+                <div style="margin-bottom: 24px;">
+                    <h3 style="font-family: 'Fair Display', Arial, sans-serif; color: #001f3f; font-size: 1.2rem; margin-bottom: 8px;">Business Hours</h3>
+                    <p style="color: #475869; margin: 0;">Monday - Friday: 9:00 AM - 6:00 PM (PST)</p>
+                    <p style="color: #475869; margin: 0;">Saturday: 10:00 AM - 4:00 PM (PST)</p>
+                    <p style="color: #475869; margin: 0;">Sunday: Closed</p>
+                </div>
+                
+                <div style="margin-bottom: 24px;">
+                    <h3 style="font-family: 'Fair Display', Arial, sans-serif; color: #001f3f; font-size: 1.2rem; margin-bottom: 8px;">Follow Us</h3>
+                    <div style="display: flex; gap: 16px;">
+                        <a href="https://www.facebook.com/profile.php?viewas=100000686899395&id=61562514758360" target="_blank" style="color: #001f3f; text-decoration: none; font-weight: bold;">Facebook</a>
+                        <a href="https://www.instagram.com/lc544w/" target="_blank" style="color: #001f3f; text-decoration: none; font-weight: bold;">Instagram</a>
+                        <a href="https://www.linkedin.com/in/lyle-vincent-cede%C3%B1o-197131218/" target="_blank" style="color: #001f3f; text-decoration: none; font-weight: bold;">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="text-align: center; margin-top: 60px; padding: 20px; background-color: #001f3f; color: #fff;">
+        <p style="margin: 0;">&copy; 2025 Lyle Vincent Virtual Services. All rights reserved.</p>
+        <p style="margin: 0;">Follow us on <a href="https://www.facebook.com/lyle.vincent.7" style="color: #ffdc00; text-decoration: none;">Facebook</a> and <a href="https://www.linkedin.com/in/lyle-vincent-8b6b1b1b2/" style="color: #ffdc00; text-decoration: none;">LinkedIn</a>.</p>
+    </footer>
+</body>
+</html>
