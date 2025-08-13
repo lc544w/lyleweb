@@ -9,37 +9,88 @@
     :root {
       --brand: #001f3f;
       --brand-contrast: #ffdc00;
+      --text: #0f172a;
+      --muted: #6b7280;
       --bg: #f4f4f4;
       --card: #ffffff;
+      --radius: 16px;
+      --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.08);
+      --shadow-md: 0 4px 24px rgba(0, 0, 0, 0.12);
     }
-    body { margin: 0; font-family: Arial, sans-serif; background: var(--bg); color: #0f172a; }
-    .site-header {
-      position: fixed; top: 0; left: 0; right: 0; height: 110px;
-      background: rgba(0, 31, 77, 0.85); backdrop-filter: blur(4px);
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08); z-index: 1000;
-    }
-    .header-inner {
-      max-width: 1200px; margin: 0 auto; height: 100%;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 24px;
-    }
-    .left-section { display: flex; align-items: center; gap: 20px; }
-    .logo-img { width: 90px; height: 85px; border-radius: 50%; object-fit: cover; }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body { margin: 0; font-family: Arial, sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* Header */
+    .site-header { position: fixed; top: 0; left: 0; right: 0; height: 110px; background: rgba(0,31,77,0.85); backdrop-filter: blur(4px); box-shadow: var(--shadow-sm); z-index: 1000; }
+    .header-inner { max-width: 1200px; margin: 0 auto; height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 0 24px; }
+
+    .left-section { display: flex; align-items: center; gap: 18px; }
+    .logo-img { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; }
     .logo-text { display: flex; flex-direction: column; line-height: 1; }
-    .logo-main { font-family: 'Fair Display', Arial, sans-serif; font-size: 35px; font-weight: 700; color: #fff; }
+    .logo-main { font-family: 'Fair Display', Arial, sans-serif; font-size: 36px; font-weight: 700; color: #fff; }
     .logo-sub { font-size: 20px; color: #fff; }
-    nav.primary-nav ul { list-style: none; display: flex; gap: 28px; margin: 0; padding: 0; }
-    nav.primary-nav a { color: #fff; font-weight: 700; font-size: 18px; transition: color .2s; }
-    nav.primary-nav a:hover { color: var(--brand-contrast); }
-    .right-section { display: flex; align-items: center; gap: 20px; }
-    .contact-inline { list-style: none; display: flex; gap: 18px; margin: 0; padding: 0; align-items: center; }
-    .contact-inline li { display: flex; gap: 8px; align-items: center; color: #fff; font-size: 16px; }
-    .contact-inline img { width: 20px; height: 20px; filter: invert(1); }
-    .contact-us-btn { background: var(--brand-contrast); color: var(--brand); font-weight: 700; border: none; border-radius: 8px; padding: 8px 14px; font-size: 16px; cursor: pointer; }
-    .contact-us-btn:hover { background: #ffe84d; }
+
+    /* Right block matches screenshot: nav row on top, contact stacked below, right aligned */
+    .right-section { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
+
+    .nav-list { list-style: none; display: flex; gap: 36px; margin: 0; padding: 0; }
+    .nav-link { color: #fff; font-weight: 700; font-size: 20px; letter-spacing: .2px; transition: color .2s; }
+    .nav-link:hover { color: var(--brand-contrast); }
+
+    .contact-list { list-style: none; display: flex; flex-direction: column; gap: 6px; margin: 0; padding: 0; align-items: flex-start; }
+    .contact-item { display: flex; gap: 10px; align-items: center; color: #fff; font-size: 16px; }
+    .contact-item img { width: 20px; height: 20px; }
+    .icon-white { filter: invert(1); }
+    .icon-whatsapp { filter: invert(38%) sepia(98%) saturate(749%) hue-rotate(85deg) brightness(95%) contrast(92%); }
+
+    /* Main */
+    main { padding-top: 130px; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .hero { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 24px 0; }
+    #animated-text { font-family: 'Fair Display', Arial, sans-serif; font-size: 2.2rem; color: var(--brand); min-height: 60px; margin: 0 0 16px; }
+
+    .form-card { width: 100%; max-width: 420px; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow-md); padding: 28px; margin: 24px auto 0; text-align: left; }
+    .form-card label { display: block; font-weight: 600; color: var(--brand); margin: 0 0 6px; }
+    .form-card input[type="text"], .form-card input[type="email"], .form-card textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 16px; font-size: 1rem; }
+    .form-card button[type="submit"] { width: 100%; background: var(--brand); color: #fff; font-size: 1.1rem; font-weight: 700; border: none; border-radius: 6px; padding: 12px 0; cursor: pointer; transition: background .2s; }
+    .form-card button[type="submit"]:hover { background: #003366; }
+    .form-hint { font-size: .95rem; color: #888; margin: 12px 0 0; }
+
+    /* Appointments */
+    .appointments { display: flex; flex-direction: column; align-items: center; gap: 16px; padding: 40px 0 0; }
+    .appointments h3 { font-family: 'Fair Display', Arial, sans-serif; color: var(--brand); font-size: 1.5rem; margin: 0; }
+    .calendar-frame { border: 0; width: 100%; height: 600px; background: #fff; border-radius: var(--radius); box-shadow: var(--shadow-sm); }
+
+    /* Footer */
+    footer.site-footer { text-align: center; margin-top: 40px; padding: 20px; background: var(--brand); color: #fff; }
+    footer.site-footer a { color: var(--brand-contrast); }
+
+    /* Chatbox */
+    #chatbox-container { position: fixed; bottom: 28px; right: 32px; z-index: 9999; font-family: Arial, sans-serif; }
+    #chatbox-header { background: var(--brand); color: #fff; padding: 13px 22px; border-radius: 16px 16px 0 0; cursor: pointer; font-size: 1.1rem; font-weight: 700; box-shadow: var(--shadow-sm); display: flex; align-items: center; gap: 10px; }
+    #chatbox-body { display: none; background: #fff; border-radius: 0 0 16px 16px; box-shadow: var(--shadow-md); width: 320px; max-width: 90vw; overflow: hidden; }
+    #chat-messages { height: 220px; overflow-y: auto; padding: 16px; background: #f7f8fa; border-bottom: 1px solid #e0e0e0; }
+    #chat-form { display: flex; border-top: 1px solid #e0e0e0; background: #fff; padding: 10px; gap: 8px; }
+    #chat-input { flex: 1; border: 1px solid #ccc; border-radius: 7px; padding: 7px 10px; font-size: 1rem; }
+    #chat-send-btn { background: var(--brand); color: #fff; border: none; border-radius: 7px; padding: 7px 16px; font-size: 1rem; cursor: pointer; }
+    #chat-send-btn:hover { background: #003366; }
+
+    /* Utilities */
+    hr.section { margin: 40px auto 30px; width: 90%; border: 0; border-top: 2px solid #e0e0e0; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .nav-list { display: none; }
+      .contact-list { align-items: flex-end; }
+    }
   </style>
 </head>
 <body>
+  <!-- Header -->
   <header class="site-header">
     <div class="header-inner">
       <div class="left-section">
@@ -48,28 +99,160 @@
           <span class="logo-main">Platinum</span>
           <span class="logo-sub">Virtual Partnership</span>
         </div>
-        <nav class="primary-nav">
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact Us</a></li>
+      </div>
+
+      <div class="right-section">
+        <nav class="primary-nav" aria-label="Primary">
+          <ul class="nav-list">
+            <li><a class="nav-link" href="#">Home</a></li>
+            <li><a class="nav-link" href="#services">Services</a></li>
+            <li><a class="nav-link" href="#about">About</a></li>
+            <li><a class="nav-link" href="#contact">Contact Us</a></li>
           </ul>
         </nav>
-      </div>
-      <div class="right-section">
-        <ul class="contact-inline">
-          <li>
-            <img src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/svgs/solid/envelope.svg" alt="Email" />
+        <ul class="contact-list" aria-label="Contact">
+          <li class="contact-item">
+            <img class="icon-white" src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/svgs/solid/envelope.svg" alt="Email" />
             <span>contact@lylevincent.info</span>
           </li>
-          <li>
-            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg" alt="WhatsApp" style="filter: invert(38%) sepia(98%) saturate(749%) hue-rotate(85deg) brightness(95%) contrast(92%);" />
+          <li class="contact-item">
+            <img class="icon-whatsapp" src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg" alt="WhatsApp" />
             <span>+639055558430</span>
           </li>
         </ul>
       </div>
     </div>
   </header>
+
+  <!-- Main -->
+  <main>
+    <section class="container hero" id="contact">
+      <h2 id="animated-text" aria-live="polite"></h2>
+      <div class="form-card" role="region" aria-labelledby="contact-form-title">
+        <h3 id="contact-form-title" style="margin:0 0 12px; font-size:1.25rem;">Contact us</h3>
+        <form>
+          <label for="fullname">Full Name</label>
+          <input type="text" id="fullname" name="fullname" required />
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required />
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+          <input type="hidden" name="to" value="contact@lylevincent.info" />
+          <button type="submit">Submit</button>
+          <p class="form-hint">We'll get back to you at your email address.</p>
+        </form>
+      </div>
+    </section>
+
+    <hr class="section" />
+
+    <section class="container appointments" id="appointments">
+      <h3>Schedule an Appointment</h3>
+      <iframe class="calendar-frame" title="Google Calendar Appointment Scheduling" src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2jaxEIVOZc0xY8uuVub6BVlkqlnIjK7pT1OsNTe_mIxrx_UU_Nxbs6XI3YXKlplGVa60qtkh1r?gv=true" frameborder="0" scrolling="yes" allowtransparency="true"></iframe>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p style="margin: 0">&copy; 2025 Lyle Vincent Virtual Services. All rights reserved.</p>
+    <p style="margin: 0">Follow us on <a href="https://www.facebook.com/lyle.vincent.7">Facebook</a> and <a href="https://www.linkedin.com/in/lyle-vincent-8b6b1b1b2/">LinkedIn</a>.</p>
+  </footer>
+
+  <!-- Chatbox Widget -->
+  <div id="chatbox-container" aria-live="polite">
+    <div id="chatbox-header">
+      <img src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/svgs/solid/comment-dots.svg" alt="Chat" style="width:22px; height:22px; filter: invert(1)" />
+      Chat with us!
+    </div>
+    <div id="chatbox-body">
+      <div id="chat-messages" aria-label="Chat messages"></div>
+      <form id="chat-form" autocomplete="off">
+        <input type="text" id="chat-input" placeholder="Type your message..." autocomplete="off" aria-label="Type your message" />
+        <button type="submit" id="chat-send-btn">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // Typewriter text
+    const texts = [
+      "Fill out the form or schedule an appointment.",
+      "We're here to help you succeed!",
+      "Contact us today."
+    ];
+    let idx = 0, char = 0, isDeleting = false;
+    function animateText() {
+      const el = document.getElementById('animated-text');
+      if (!el) return;
+      const currentText = texts[idx];
+      if (!isDeleting && char <= currentText.length) {
+        el.textContent = currentText.substring(0, char++);
+        setTimeout(animateText, 60);
+      } else if (isDeleting && char >= 0) {
+        el.textContent = currentText.substring(0, char--);
+        setTimeout(animateText, 30);
+      } else {
+        if (!isDeleting) { isDeleting = true; setTimeout(animateText, 1200); }
+        else { isDeleting = false; idx = (idx + 1) % texts.length; setTimeout(animateText, 500); }
+      }
+    }
+    animateText();
+  </script>
+
+  <script>
+    // Chatbox behavior
+    const chatHeader = document.getElementById('chatbox-header');
+    const chatBody = document.getElementById('chatbox-body');
+    const chatForm = document.getElementById('chat-form');
+    const chatInput = document.getElementById('chat-input');
+    const chatMessages = document.getElementById('chat-messages');
+
+    chatHeader.addEventListener('click', () => {
+      const isOpen = chatBody.style.display === 'block';
+      chatBody.style.display = isOpen ? 'none' : 'block';
+      if (!isOpen && !chatMessages.hasChildNodes()) {
+        setTimeout(() => appendMessage("Hi. How can I help you today?", 'bot'), 300);
+        startIntroFlow();
+      }
+    });
+
+    function appendMessage(text, sender = 'user') {
+      const msg = document.createElement('div');
+      msg.style.margin = '6px 0';
+      msg.style.textAlign = sender === 'user' ? 'right' : 'left';
+      msg.innerHTML = `<span style="display:inline-block; background:${sender==='user'?'#001f4d':'#e6e6e6'}; color:${sender==='user'?'#fff':'#001f4d'}; border-radius:8px; padding:7px 13px; max-width:75%; word-break:break-word;">${text}</span>`;
+      chatMessages.appendChild(msg);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function startIntroFlow() {
+      let step = 0; let userName = ''; let userEmail = '';
+      function askName() { appendMessage("What's your name?", 'bot'); step = 1; }
+      function askEmail() { appendMessage(`Nice to meet you, ${userName}! What's your email address?`, 'bot'); step = 2; }
+      function finishIntro() {
+        appendMessage(`Thank you, ${userName}! We'll reach out to you at ${userEmail}. How can I assist you today?`, 'bot');
+        fetch('https://formspree.io/f/xwkgyyqg', { method: 'POST', headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }, body: JSON.stringify({ name: userName, email: userEmail, message: 'Chatbot intro from website' }) });
+        step = 3;
+      }
+      chatForm.onsubmit = function(e) {
+        e.preventDefault();
+        const userMsg = chatInput.value.trim();
+        if (!userMsg) return;
+        appendMessage(userMsg, 'user');
+        chatInput.value = '';
+        if (step === 1) { userName = userMsg; setTimeout(askEmail, 600); return; }
+        if (step === 2) { userEmail = userMsg; setTimeout(finishIntro, 600); return; }
+        setTimeout(() => {
+          let reply = "Thank you for your message. We'll get back to you soon.";
+          if (/hello|hi|hey/i.test(userMsg)) reply = "Hello. How can I assist you today?";
+          else if (/service|offer/i.test(userMsg)) reply = "We offer a range of virtual business services. What are you interested in?";
+          else if (/contact|email|phone/i.test(userMsg)) reply = "You can contact us via the Contact section or this chat.";
+          appendMessage(reply, 'bot');
+        }, 700);
+      };
+      setTimeout(askName, 800);
+    }
+  </script>
 </body>
 </html>
