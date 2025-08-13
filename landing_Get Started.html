@@ -11,32 +11,59 @@
             position: relative;
             min-height: 100vh;
             overflow-x: hidden;
-        }
-        header {
-            background-color: #001f3f; /* Navy */
+         }
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            padding:40px;
-            height: 80px;
-        }
-        .logo-container {
-            display: flex;          
+            z-index: 100;
+            background: rgba(0, 31, 77, 0.85);
+            height: 110px;
+            display: flex;
             align-items: center;
-            
-
+            padding-left: 40px;
+            padding: 20px;
+            z-index: 1;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            backdrop-filter: blur(4px);
         }
         .logo-img {
             height: 50px;
-            width: 50px;
-            object-fit: contain;
-            margin-right: 15px;
+            width: 65px;
+            margin-right: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            object-fit: flex; 
         }
         .logo-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+            margin-top: 10px;
+        }
+        .logo-main {
+            font-family: 'Fair Display', Arial, sans-serif;
+            font-size: 35px;
             color: #fff;
-            font-size: 2rem;
             font-weight: bold;
-            letter-spacing: 1px;
+            line-height: 1;
+        }
+        .logo-sub {
+            font-family: Arial, sans-serif;
+            font-size: 25px;
+            color: #fff;
+            font-weight: normal;
+            line-height: 1;
+            margin-top: 1;
         }
         nav ul {
             list-style: none;
@@ -340,3 +367,4 @@ chatHeader.addEventListener('click', function() {
 });
 
 </script>
+
