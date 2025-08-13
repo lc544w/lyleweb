@@ -4,18 +4,17 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Platinum Virtual Partnership</title>
-<link href="https://fonts.googleapis.com/css2?family=Fair+Display:wght@700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
 <style>
 :root { --brand:#001f3f; --brand-contrast:#ffdc00; --bg:#f7f8fa; }
 *{box-sizing:border-box}
 body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#0f172a;background:var(--bg)}
-/* Header (matches previous layout) */
 .site-header{position:fixed;top:0;left:0;right:0;height:110px;background:rgba(0,31,77,.85);backdrop-filter:blur(4px);box-shadow:0 2px 12px rgba(0,0,0,.08);z-index:1000}
 .header-inner{max-width:1200px;margin:0 auto;height:100%;display:flex;align-items:center;justify-content:space-between;padding:0 24px}
 .left-section{display:flex;align-items:center;gap:18px}
 .logo-img{width:90px;height:90px;border-radius:50%;object-fit:cover}
 .logo-text{display:flex;flex-direction:column;line-height:1}
-.logo-main{font-family:'Fair Display',Arial,sans-serif;font-size:36px;font-weight:700;color:#fff}
+.logo-main{font-family:'Playfair Display',Arial,sans-serif;font-size:36px;font-weight:700;color:#fff}
 .logo-sub{font-size:20px;color:#fff}
 .right-section{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
 .nav-list{list-style:none;display:flex;gap:36px;margin:0;padding:0}
@@ -26,23 +25,20 @@ body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#0f172a;background:va
 .contact-item img{width:20px;height:20px}
 .icon-white{filter:invert(1)}
 .icon-whatsapp{filter: invert(38%) sepia(98%) saturate(749%) hue-rotate(85deg) brightness(95%) contrast(92%)}
-/* Hero with video background */
 .hero{position:relative;padding-top:120px}
 .video-bg{position:fixed;top:0;left:0;width:100vw;height:60vh;object-fit:cover;z-index:-1;opacity:.8;filter:blur(8px)}
 .hero-inner{max-width:1100px;margin:0 auto;padding:20px 24px;text-align:center}
-#animated-text{font-family:'Fair Display',Arial,sans-serif;font-size:2.2rem;color:#001f3f;min-height:60px;margin:0 0 6px}
-.tagline{font-family:'Fair Display',Arial,sans-serif;font-size:30px;color:#001f3f;margin:8px 0 20px;font-weight:700}
-.cta-btn{font-family:'Fair Display',Arial,sans-serif;font-size:22px;color:#fff;background:#001f3f;border:0;border-radius:10px;padding:12px 28px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.08);transition:transform .15s}
+#animated-text{font-family:'Playfair Display',Arial,sans-serif;font-size:2.2rem;color:#001f3f;min-height:60px;margin:0 0 6px}
+.tagline{font-family:'Playfair Display',Arial,sans-serif;font-size:30px;color:#001f3f;margin:8px 0 20px;font-weight:700}
+.cta-btn{font-family:'Playfair Display',Arial,sans-serif;font-size:22px;color:#fff;background:#001f3f;border:0;border-radius:10px;padding:12px 28px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.08);transition:transform .15s}
 .cta-btn:hover{transform:translateY(-1px)}
-/* Main sections */
 .container{max-width:1100px;margin:0 auto;padding:0 24px}
-.form-card{background:#fff;padding:28px;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.12);max-width:420px;margin:28px auto}
-.form-card label{display:block;font-weight:600;color:#001f3f;margin:0 0 6px}
-.form-card input[type="text"],.form-card input[type="email"],.form-card textarea{width:100%;padding:10px;border:1px solid #ccc;border-radius:6px;margin-bottom:16px;font-size:1rem}
-.form-card button{width:100%;background:#001f3f;color:#fff;font-size:1.1rem;font-weight:700;border:none;border-radius:6px;padding:12px 0;cursor:pointer}
-.section-rule{margin:40px auto 30px;width:90%;border:0;border-top:2px solid #e0e0e0}
-.calendar-frame{border:0;width:100%;height:600px;background:#fff;border-radius:16px;box-shadow:0 2px 12px rgba(0,0,0,.08)}
-/* Footer (matches previous layout) */
+.about-section{display:flex;flex-wrap:wrap;align-items:center;gap:30px;margin-top:40px}
+.about-text{flex:1;min-width:300px}
+.about-text h2{font-family:'Playfair Display',serif;font-size:3rem;font-weight:900;margin-bottom:20px;color:#001f3f;letter-spacing:0.05em}
+.about-text p{font-size:1rem;line-height:1.6;margin-bottom:1rem}
+.about-image{flex:1;min-width:280px;display:flex;justify-content:center}
+.about-image img{max-width:100%;border-radius:8px;box-shadow:0 4px 24px rgba(0,0,0,.12)}
 .site-footer{margin-top:40px;padding:20px;background:#001f3f;color:#fff}
 .footer-container{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:16px}
 .footer-left{flex:0 0 auto;white-space:nowrap}
@@ -52,7 +48,6 @@ body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#0f172a;background:va
 .social-icons a{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px}
 .social-icons a img{width:22px;height:22px;filter:invert(1);opacity:.95;transition:opacity .2s}
 .social-icons a:hover img{opacity:1}
-/* Chat widget at bottom right */
 #chatbox-container{position:fixed;bottom:28px;right:32px;z-index:9999;font-family:Arial,sans-serif}
 #chatbox-header{background:#001f3f;color:#fff;padding:13px 22px;border-radius:16px 16px 0 0;cursor:pointer;font-size:1.1rem;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,.08);display:flex;align-items:center;gap:10px}
 #chatbox-body{display:none;background:#fff;border-radius:0 0 16px 16px;box-shadow:0 4px 24px rgba(0,0,0,.13);width:320px;max-width:90vw;overflow:hidden}
@@ -63,7 +58,6 @@ body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#0f172a;background:va
 </style>
 </head>
 <body>
-<!-- Header -->
 <header class="site-header">
   <div class="header-inner">
     <div class="left-section">
@@ -74,12 +68,11 @@ body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#0f172a;background:va
       </div>
     </div>
     <div class="right-section">
-      <nav class="primary-nav" aria-label="Primary">
+      <nav aria-label="Primary">
         <ul class="nav-list">
           <li><a class="nav-link" href="#">Home</a></li>
           <li><a class="nav-link" href="#services">Services</a></li>
           <li><a class="nav-link" href="#about">About</a></li>
-          <li><a class="nav-link" href="#contact">Contact Us</a></li>
         </ul>
       </nav>
       <ul class="contact-list" aria-label="Contact">
@@ -95,8 +88,6 @@ body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#0f172a;background:va
     </div>
   </div>
 </header>
-
-<!-- Hero with video and animated line under header -->
 <section class="hero">
   <video class="video-bg" autoplay muted loop playsinline>
     <source src="aabbbccdddmp4.mp4" type="video/mp4" />
@@ -107,38 +98,30 @@ body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#0f172a;background:va
     <button class="cta-btn" id="get-started-btn">Get Started</button>
   </div>
 </section>
-
-<main class="container" id="contact">
-  <!-- Contact form -->
-  <div class="form-card" role="region" aria-labelledby="contact-form-title">
-    <h3 id="contact-form-title" style="margin:0 0 12px;font-size:1.25rem;">Contact us</h3>
-    <form id="contact-form">
-      <label for="fullname">Full Name</label>
-      <input type="text" id="fullname" name="name" required />
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" required />
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="4" required></textarea>
-      <button type="submit">Submit</button>
-      <p class="form-hint">We'll get back to you at your email address.</p>
-    </form>
+<main class="container" id="about">
+  <div class="about-section">
+    <div class="about-text">
+      <h2>ABOUT ME...</h2>
+      <p>Hey there! I'm Lyle. Picture this: a bright-eyed, bushy-tailed graduate, ready to take on the world, plunging into the corporate jungle of the Philippines.</p>
+      <p>That was me, thirteen years ago. . . . . .</p>
+      <p>Fast forward to 2012, and I found myself navigating the bustling call center industry. It was a time of sharpening skills and soaking up knowledge like a sponge.</p>
+      <p>A decade later, I felt a nudge, a whisper of a dream that was calling me towards a different path. So, in 2018, I took a leap of faith. I waved goodbye to the call center hustle and said hello to the exciting world of freelancing/virtual assistance.</p>
+      <p>The journey? Not a walk in the park, I'll tell you that. But it pushed me to learn about the diverse niches in online freelancing. I plunged into training programs, sought guidance from a coach, and committed myself to never-ending learning and growth. This dedication has helped me shine in various roles across different industries.</p>
+      <p>( And now, fast forward to the present. . . )</p>
+      <p>Delivering top-notch results with a sprinkle of integrity is my jam. But what does this mean for you? Well, you're not just getting a virtual assistant. You're gaining a dedicated partner who's all in for your success. Someone who brings a treasure trove of experience, a thirst for learning, and a drive to deliver nothing but the best.</p>
+      <p>So, how about we team up and catapult your business to new heights?</p>
+      <p>Let's do this!</p>
+    </div>
+    <div class="about-image">
+      <img src="headshot.png" alt="Lyle portrait" />
+    </div>
   </div>
-
-  <hr class="section-rule" />
-
-  <!-- Appointment scheduler -->
-  <section class="appointments" id="appointments" style="display:flex;flex-direction:column;align-items:center;gap:16px;">
-    <h3 style="font-family:'Fair Display',Arial,sans-serif;color:#001f3f;font-size:1.5rem;margin:0;">Schedule an Appointment</h3>
-    <iframe class="calendar-frame" title="Google Calendar Appointment Scheduling" src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2jaxEIVOZc0xY8uuVub6BVlkqlnIjK7pT1OsNTe_mIxrx_UU_Nxbs6XI3YXKlplGVa60qtkh1r?gv=true" frameborder="0" scrolling="yes" allowtransparency="true"></iframe>
-  </section>
 </main>
-
-<!-- Footer: copyright left, icons centered, spacer right -->
 <footer class="site-footer">
   <div class="footer-container">
     <div class="footer-left">© 2025 Platinum Virtual Partnership. All rights reserved.</div>
     <div class="footer-center">
-      <div class="social-icons" aria-label="Social media">
+      <div class="social-icons">
         <a href="https://www.facebook.com/lyle.vincent.cedeno.2024" target="_blank" rel="noopener" aria-label="Facebook">
           <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/facebook.svg" alt="Facebook" />
         </a>
@@ -153,39 +136,25 @@ body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#0f172a;background:va
     <div class="footer-right"></div>
   </div>
 </footer>
-
-<!-- Chat widget -->
 <div id="chatbox-container" aria-live="polite">
   <div id="chatbox-header">
     <img src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/svgs/solid/comment-dots.svg" alt="Chat" style="width:22px;height:22px;filter:invert(1)" />
     Chat with us!
   </div>
   <div id="chatbox-body">
-    <div id="chat-messages" aria-label="Chat messages"></div>
+    <div id="chat-messages"></div>
     <form id="chat-form" autocomplete="off">
-      <input type="text" id="chat-input" placeholder="Type your message..." autocomplete="off" aria-label="Type your message" />
+      <input type="text" id="chat-input" placeholder="Type your message..." />
       <button type="submit" id="chat-send-btn">Send</button>
     </form>
   </div>
 </div>
-
 <script>
-// Typewriter text from your phrases
 const texts=["I streamline the workflow.","I deliver results.","I am not just providing service."];
 let idx=0,char=0,isDeleting=false;const el=document.getElementById('animated-text');
 function animateText(){if(!el)return;const t=texts[idx];if(!isDeleting&&char<=t.length){el.textContent=t.substring(0,char++);setTimeout(animateText,60);}else if(isDeleting&&char>=0){el.textContent=t.substring(0,char--);setTimeout(animateText,30);}else{if(!isDeleting){isDeleting=true;setTimeout(animateText,1200);}else{isDeleting=false;idx=(idx+1)%texts.length;setTimeout(animateText,500);}}}
 animateText();
-
-// Get Started and nav openers
 document.getElementById('get-started-btn').addEventListener('click',()=>{window.open('landing_Get Started.html','_blank');});
-document.querySelectorAll('a[href="#about"]').forEach(a=>a.addEventListener('click',(e)=>{e.preventDefault();window.open('landing_About ME.html','_blank');}));
-document.querySelectorAll('a[href="#services"]').forEach(a=>a.addEventListener('click',(e)=>{e.preventDefault();window.open('landing_services.html','_blank');}));
-
-// Contact form placeholder submission
-const contactForm=document.getElementById('contact-form');
-contactForm.addEventListener('submit',(e)=>{e.preventDefault();alert('Thanks for your message. We will get back to you within 24 hours.');contactForm.reset();});
-
-// Chat widget guided flow: Full Name -> Email -> Reason -> 24-hour notice
 const chatHeader=document.getElementById('chatbox-header');
 const chatBody=document.getElementById('chatbox-body');
 const chatForm=document.getElementById('chat-form');
