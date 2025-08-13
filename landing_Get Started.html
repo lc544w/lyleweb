@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lyle Vincent Platinum Virtual Partnership</title>
+  <title>Platinum Virtual Partnership</title>
   <link href="https://fonts.googleapis.com/css2?family=Fair+Display:wght@700&display=swap" rel="stylesheet" />
   <style>
     :root {
@@ -51,7 +51,7 @@
         <ul class="contact-list" aria-label="Contact">
           <li class="contact-item">
             <img class="icon-white" src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/svgs/solid/envelope.svg" alt="Email" />
-            <span>contact@platinumvirtualpartnership</span>
+            <span>contact@platinumvirtualpartnership.com</span>
           </li>
           <li class="contact-item">
             <img class="icon-whatsapp" src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg" alt="WhatsApp" />
@@ -61,6 +61,96 @@
       </div>
     </div>
   </header>
+
+  <main style="padding-top:130px;max-width:1100px;margin:0 auto;padding:0 24px;">
+    <h2 id="animated-text" style="font-family:'Fair Display',Arial,sans-serif;font-size:2.2rem;color:#001f3f;min-height:60px;margin-bottom:20px;text-align:center;"></h2>
+    <div class="form-card" style="background:#fff;padding:28px;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.12);max-width:420px;margin:0 auto 40px;">
+      <form action="https://formspree.io/f/xwkgyyqg" method="POST">
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" name="fullname" required style="width:100%;margin-bottom:16px;" />
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required style="width:100%;margin-bottom:16px;" />
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required style="width:100%;margin-bottom:16px;"></textarea>
+        <input type="hidden" name="to" value="contact@platinumvirtualpartnership.com" />
+        <button type="submit" style="width:100%;background:#001f3f;color:#fff;padding:12px;border:none;border-radius:6px;">Submit</button>
+      </form>
+    </div>
+    <h3 style="text-align:center;color:#001f3f;">Schedule an Appointment</h3>
+    <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2jaxEIVOZc0xY8uuVub6BVlkqlnIjK7pT1OsNTe_mIxrx_UU_Nxbs6XI3YXKlplGVa60qtkh1r?gv=true" style="border:0;width:100%;height:600px;border-radius:16px;box-shadow:0 2px 12px rgba(0,0,0,.08);"></iframe>
+  </main>
+
+  <footer style="text-align:center;margin-top:40px;padding:20px;background:#001f3f;color:#fff;">
+    <p style="margin:0">&copy; 2025 Platinum Virtual Partnership. All rights reserved.</p>
+  </footer>
+
+  <div id="chatbox-container" style="position:fixed;bottom:28px;right:32px;z-index:9999;font-family:Arial,sans-serif;">
+    <div id="chatbox-header" style="background:#001f3f;color:#fff;padding:13px 22px;border-radius:16px 16px 0 0;cursor:pointer;">
+      Chat with us!
+    </div>
+    <div id="chatbox-body" style="display:none;background:#fff;border-radius:0 0 16px 16px;width:320px;max-width:90vw;">
+      <div id="chat-messages" style="height:220px;overflow-y:auto;padding:16px;background:#f7f8fa;"></div>
+      <form id="chat-form" autocomplete="off" style="display:flex;padding:10px;gap:8px;">
+        <input type="text" id="chat-input" placeholder="Type your message..." style="flex:1;border:1px solid #ccc;border-radius:7px;padding:7px 10px;" />
+        <button type="submit" id="chat-send-btn" style="background:#001f3f;color:#fff;border:none;border-radius:7px;padding:7px 16px;">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Typewriter effect
+    const texts = ["Fill out the form or schedule an appointment.", "We're here to help you succeed!", "Contact us today."];
+    let idx = 0, char = 0, isDeleting = false;
+    function animateText() {
+      const el = document.getElementById('animated-text');
+      if (!el) return;
+      const current = texts[idx];
+      if (!isDeleting && char <= current.length) {
+        el.textContent = current.substring(0, char++);
+        setTimeout(animateText, 60);
+      } else if (isDeleting && char >= 0) {
+        el.textContent = current.substring(0, char--);
+        setTimeout(animateText, 30);
+      } else {
+        if (!isDeleting) { isDeleting = true; setTimeout(animateText, 1200); }
+        else { isDeleting = false; idx = (idx + 1) % texts.length; setTimeout(animateText, 500); }
+      }
+    }
+    animateText();
+
+    // Chat widget with email send
+    const chatHeader = document.getElementById('chatbox-header');
+    const chatBody = document.getElementById('chatbox-body');
+    const chatForm = document.getElementById('chat-form');
+    const chatInput = document.getElementById('chat-input');
+    const chatMessages = document.getElementById('chat-messages');
+
+    chatHeader.onclick = () => {
+      chatBody.style.display = chatBody.style.display === 'none' ? 'block' : 'none';
+    };
+
+    function appendMessage(text, sender = 'user') {
+      const msg = document.createElement('div');
+      msg.style.margin = '6px 0';
+      msg.style.textAlign = sender === 'user' ? 'right' : 'left';
+      msg.innerHTML = `<span style="display:inline-block;background:${sender==='user'?'#001f4d':'#e6e6e6'};color:${sender==='user'?'#fff':'#001f4d'};border-radius:8px;padding:7px 13px;">${text}</span>`;
+      chatMessages.appendChild(msg);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    chatForm.onsubmit = function(e) {
+      e.preventDefault();
+      const userMsg = chatInput.value.trim();
+      if (!userMsg) return;
+      appendMessage(userMsg, 'user');
+      chatInput.value = '';
+      fetch('https://formspree.io/f/xwkgyyqg', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: 'contact@platinumvirtualpartnership.com', message: userMsg })
+      });
+      appendMessage("Thanks for reaching out! We'll get back to you soon.", 'bot');
+    };
+  </script>
 </body>
 </html>
-
