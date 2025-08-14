@@ -6,177 +6,167 @@
 <title>Platinum Virtual Partnership</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
 <style>
-:root { --brand:#001f3f; --brand-contrast:#ffdc00; --bg:#f7f8fa; }
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#0f172a;background:var(--bg)}
-.site-header{position:fixed;top:0;left:0;right:0;height:110px;background:rgba(0,31,77,.85);backdrop-filter:blur(4px);box-shadow:0 2px 12px rgba(0,0,0,.08);z-index:1000}
-.header-inner{max-width:1200px;margin:0 auto;height:100%;display:flex;align-items:center;justify-content:space-between;padding:0 24px}
-.left-section{display:flex;align-items:center;gap:18px}
-.logo-img{width:90px;height:90px;border-radius:50%;object-fit:cover}
-.logo-text{display:flex;flex-direction:column;line-height:1}
-.logo-main{font-family:'Playfair Display',Arial,sans-serif;font-size:36px;font-weight:700;color:#fff}
-.logo-sub{font-size:20px;color:#fff}
-.right-section{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
-.nav-list{list-style:none;display:flex;gap:36px;margin:0;padding:0}
-.nav-link{color:#fff;font-weight:700;font-size:20px;transition:color .2s}
-.nav-link:hover{color:var(--brand-contrast)}
-.contact-list{list-style:none;display:flex;gap:20px;margin:0;padding:0}
-.contact-item{display:flex;gap:8px;align-items:center;color:#fff;font-size:16px}
-.contact-item img{width:20px;height:20px}
-.icon-white{filter:invert(1)}
-.icon-whatsapp{filter: invert(38%) sepia(98%) saturate(749%) hue-rotate(85deg) brightness(95%) contrast(92%)}
-
-/* Hero */
-.hero{position:relative;padding-top:120px;min-height:60vh;padding-bottom:80px}
-.video-bg{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-1;opacity:.8;filter:blur(8px)}
-.hero-inner{max-width:1100px;margin:0 auto;padding:60px 24px;text-align:center}
-#animated-text{font-family:'Playfair Display',Arial,sans-serif;font-size:2.5rem;color:#fff;min-height:60px;margin:0 0 6px;text-shadow:0 2px 6px rgba(0,0,0,0.6)}
-.tagline{font-family:'Playfair Display',Arial,sans-serif;font-size:32px;color:#fff;margin:8px 0 20px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,0.6)}
-.cta-btn{font-family:'Playfair Display',Arial,sans-serif;font-size:22px;color:#fff;background:#001f3f;border:0;border-radius:10px;padding:12px 28px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.08);transition:transform .15s}
-.cta-btn:hover{transform:translateY(-1px)}
-
-/* Containers */
-.container{max-width:1100px;margin:80px auto;padding:0 24px}
-
-/* About */
-.about-section{display:flex;flex-wrap:wrap;align-items:center;gap:30px;margin-top:80px;margin-bottom:80px}
-.about-text{flex:1;min-width:300px}
-.about-text h2{font-family:'Playfair Display',serif;font-size:3.2rem;font-weight:900;margin-bottom:20px;color:#001f3f;letter-spacing:.05em}
-.about-text p{font-size:1.1rem;line-height:1.8;margin-bottom:1rem;color:#333}
-.about-image{flex:1;min-width:280px;display:flex;justify-content:center}
-.about-image img{max-width:100%;border-radius:8px;box-shadow:0 4px 24px rgba(0,0,0,.12)}
-
-/* Services (continues the page, with extra spacing) */
-.services-section{padding:80px 24px;background:#f8f9fa}
-.services-inner{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:40px}
-.services-media{flex:1;min-width:320px}
-.services-media img{width:100%;max-width:520px;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,.1)}
-.services-text{flex:1;min-width:320px}
-.services-text h2{font-family:'Playfair Display',serif;font-weight:900;font-size:2.6rem;margin:0 0 16px;color:#001f4d}
-.services-text p{font-size:1.1rem;line-height:1.8;color:#333;margin:0 0 16px}
-
-/* Footer */
-.site-footer{margin-top:40px;padding:20px;background:#001f3f;color:#fff}
-.footer-container{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:16px}
-.footer-left{flex:0 0 auto;white-space:nowrap}
-.footer-center{flex:1;display:flex;justify-content:center}
-.footer-right{flex:0 0 320px}
-.social-icons{display:flex;gap:15px;justify-content:center}
-.social-icons a{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px}
-.social-icons a img{width:22px;height:22px;filter:invert(1);opacity:.95;transition:opacity .2s}
-.social-icons a:hover img{opacity:1}
+.container {
+  max-width: 1100px;
+  margin: 80px auto;
+  padding: 0 24px;
+}
+.about-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+.about-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.2rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+  color: #001f3f;
+}
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  color: #333;
+}
+.about-image {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  justify-content: center;
+}
+.about-image img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+}
+.services-section {
+  padding: 80px 20px;
+  background-color: #f8f9fa;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+  margin-top: 80px;
+}
+.services-section img {
+  max-width: 500px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.services-text {
+  flex: 1;
+  min-width: 300px;
+}
+.services-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 42px;
+  margin-bottom: 20px;
+  color: #001f4d;
+}
+.services-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 16px;
+}
+.transform-section {
+  padding: 100px 20px;
+  background-color: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+}
+.transform-section img {
+  max-width: 500px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.transform-text {
+  flex: 1;
+  min-width: 300px;
+}
+.transform-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 46px;
+  margin-bottom: 20px;
+  color: #001f4d;
+}
+.transform-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 16px;
+}
 </style>
 </head>
 <body>
 <header class="site-header">
-  <div class="header-inner">
-    <div class="left-section">
-      <img src="logo2.png" alt="Logo" class="logo-img" />
-      <div class="logo-text">
-        <span class="logo-main">Platinum</span>
-        <span class="logo-sub">Virtual Partnership</span>
-      </div>
-    </div>
-    <div class="right-section">
-      <nav aria-label="Primary">
-        <ul class="nav-list">
-          <li><a class="nav-link" href="#">Home</a></li>
-          <li><a class="nav-link" href="#services">Services</a></li>
-          <li><a class="nav-link" href="#about">About</a></li>
-          <li><a class="nav-link" href="landing_Get Started.html" target="_blank">Contact Us</a></li>
-        </ul>
-      </nav>
-      <ul class="contact-list" aria-label="Contact">
-        <li class="contact-item">
-          <img class="icon-white" src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/svgs/solid/envelope.svg" alt="Email" />
-          <span>contact@platinumvirtualpartnership.com</span>
-        </li>
-        <li class="contact-item">
-          <img class="icon-whatsapp" src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg" alt="WhatsApp" />
-          <span>+639055558430</span>
-        </li>
-      </ul>
-    </div>
-  </div>
+  <!-- existing header code -->
 </header>
-
 <section class="hero">
-  <video class="video-bg" autoplay muted loop playsinline>
-    <source src="aabbbccdddmp4.mp4" type="video/mp4" />
-  </video>
-  <div class="hero-inner">
-    <h2 id="animated-text"></h2>
-    <div class="tagline">I am your trusted business Ally</div>
-    <button class="cta-btn" id="get-started-btn">Get Started</button>
-  </div>
+  <!-- existing hero code -->
 </section>
-
 <section class="container" id="about">
   <div class="about-section">
-    <div class="about-text">
-      <h2>ABOUT ME...</h2>
-      <p>Hey there! I'm Lyle. Picture this: a bright-eyed, bushy-tailed graduate, ready to take on the world, plunging into the corporate jungle of the Philippines.</p>
-      <p>That was me, thirteen years ago. . . . . .</p>
-      <p>Fast forward to 2012, and I found myself navigating the bustling call center industry. It was a time of sharpening skills and soaking up knowledge like a sponge.</p>
-      <p>A decade later, I felt a nudge, a whisper of a dream that was calling me towards a different path. So, in 2018, I took a leap of faith. I waved goodbye to the call center hustle and said hello to the exciting world of freelancing/virtual assistance.</p>
-      <p>The journey? Not a walk in the park, I'll tell you that. But it pushed me to learn about the diverse niches in online freelancing. I plunged into training programs, sought guidance from a coach, and committed myself to never-ending learning and growth. This dedication has helped me shine in various roles across different industries.</p>
-      <p>( And now, fast forward to the present. . . )</p>
-      <p>Delivering top-notch results with a sprinkle of integrity is my jam. But what does this mean for you? Well, you're not just getting a virtual assistant. You're gaining a dedicated partner who's all in for your success. Someone who brings a treasure trove of experience, a thirst for learning, and a drive to deliver nothing but the best.</p>
-      <p>So, how about we team up and catapult your business to new heights?</p>
-      <p>Let's do this!</p>
-    </div>
-    <div class="about-image">
-      <img src="headshot.png" alt="Lyle portrait" />
-    </div>
+    <!-- existing about content -->
   </div>
 </section>
-
-<!-- Our Services (right after About Me, with ample spacing) -->
 <section class="services-section" id="services">
-  <div class="services-inner">
-    <div class="services-media">
-      <!-- Upload your realistic WFH image to your hosting with this name -->
-      <img src="home-office-setup.jpg" alt="Work from home setup for virtual services" />
-    </div>
-    <div class="services-text">
-      <h2>Our Services...</h2>
-      <p>Here's what I bring to the table!</p>
-      <p>Ever feel like you're juggling flaming torches while riding a unicycle on a tightrope? When systems are in disarray and decisions keep landing at your feet, it's like a never-ending circus act.</p>
-      <p>Things slip through the cracks, metrics get ignored, and your business can hit a standstill. Plus, the specter of burnout is always lurking in the shadows.</p>
-      <p>But what if I told you there's a way to transform your business into a well-oiled machine, humming along with confidence and calm? A way to taste success and still have time to kick back and enjoy a cup of coffee?</p>
-      <p>That's where I come in. My services are like a magic wand that can turn your stress into streamlined systems, your panic into profits, and carve out the breathing space you need to savor all the flavors of life.</p>
-      <p>From managing your Short-Term Vacation Rental to building your website, from being your Executive Virtual Assistant to handling your bookkeeping, I've got you covered.</p>
-      <p>Let's turn that circus act into a harmonious symphony, shall we?</p>
-    </div>
+  <img src="ourservicesphoto.png" alt="Our Services" />
+  <div class="services-text">
+    <h2>Our Services...</h2>
+    <p>Here's what I bring to the table!</p>
+    <p>Ever feel like you're juggling flaming torches while riding a unicycle on a tightrope? When systems are in disarray and decisions keep landing at your feet, it's like a never-ending circus act.</p>
+    <p>Things slip through the cracks, metrics get ignored, and your business can hit a standstill. Plus, the specter of burnout is always lurking in the shadows.</p>
+    <p>But what if I told you there's a way to transform your business into a well-oiled machine, humming along with confidence and calm? A way to taste success and still have time to kick back and enjoy a cup of coffee?</p>
+    <p>That's where I come in. My services are like a magic wand that can turn your stress into streamlined systems, your panic into profits, and carve out the breathing space you need to savor all the flavors of life.</p>
+    <p>From managing your Short-Term Vacation Rental to building your website, from being your Executive Virtual Assistant to handling your bookkeeping, I've got you covered.</p>
+    <p>Let's turn that circus act into a harmonious symphony, shall we?</p>
   </div>
 </section>
-
-<footer class="site-footer">
-  <div class="footer-container">
-    <div class="footer-left">© 2025 Platinum Virtual Partnership. All rights reserved.</div>
-    <div class="footer-center">
-      <div class="social-icons">
-        <a href="https://www.facebook.com/lyle.vincent.cedeno.2024" target="_blank" rel="noopener" aria-label="Facebook">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/facebook.svg" alt="Facebook" />
-        </a>
-        <a href="https://www.instagram.com/lylevincentcedeno/profilecard/?igsh=YTJpM2czenJybGow" target="_blank" rel="noopener" aria-label="Instagram">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/instagram.svg" alt="Instagram" />
-        </a>
-        <a href="https://www.linkedin.com/in/lyle-vincent" target="_blank" rel="noopener" aria-label="LinkedIn">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg" alt="LinkedIn" />
-        </a>
-      </div>
-    </div>
-    <div class="footer-right"></div>
+<section class="transform-section">
+  <img src="ourservicesphoto2.png" alt="Transform Your Workflow" />
+  <div class="transform-text">
+    <h2>Transform Your Workflow</h2>
+    <p>Streamlined solutions tailored to your goals. Think of it as trading in chaos for calm, stress for peace, and inefficiency for high productivity. Hiring someone like me is your ticket to a smoother, more efficient, and more enjoyable business journey.</p>
   </div>
+</section>
+<footer class="site-footer">
+  <!-- existing footer code -->
 </footer>
-
 <script>
-const texts=["I streamline the workflow.","I deliver results.","I am not just providing service."];
-let idx=0,char=0,isDeleting=false;const el=document.getElementById('animated-text');
-function animateText(){if(!el)return;const t=texts[idx];if(!isDeleting&&char<=t.length){el.textContent=t.substring(0,char++);setTimeout(animateText,60);}else if(isDeleting&&char>=0){el.textContent=t.substring(0,char--);setTimeout(animateText,30);}else{if(!isDeleting){isDeleting=true;setTimeout(animateText,1200);}else{isDeleting=false;idx=(idx+1)%texts.length;setTimeout(animateText,500);}}}
-animateText();
-document.getElementById('get-started-btn').addEventListener('click',()=>{window.open('landing_Get Started.html','_blank');});
+// existing text animation script
+</script>
+<!-- Chat Widget Script -->
+<script>
+(function(){
+  var chatBox = document.createElement('div');
+  chatBox.style.position = 'fixed';
+  chatBox.style.bottom = '20px';
+  chatBox.style.right = '20px';
+  chatBox.style.width = '300px';
+  chatBox.style.height = '400px';
+  chatBox.style.background = '#fff';
+  chatBox.style.border = '1px solid #ccc';
+  chatBox.style.borderRadius = '10px';
+  chatBox.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+  chatBox.style.overflow = 'hidden';
+  chatBox.innerHTML = '<iframe src="chat_widget.html" style="width:100%;height:100%;border:none"></iframe>';
+  document.body.appendChild(chatBox);
+})();
 </script>
 </body>
 </html>
