@@ -3,80 +3,272 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Platinum Virtual Partnership - Streamlining your workflow with executive virtual assistant services, website building, and more." />
-  <link rel="icon" href="favicon.ico" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
-  <link href="styles.css" rel="stylesheet" />
+  <meta name="description" content="Platinum Virtual Partnership - Executive virtual assistance and streamlined business systems." />
   <title>Platinum Virtual Partnership</title>
+  <!-- Google Font (static, safe for GitHub Pages) -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
+  <style>
+    :root { --brand:#001f3f; --brand-contrast:#ffdc00; --bg:#f7f8fa; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; color: #0f172a; background: var(--bg); }
+
+    /* Header */
+    .site-header { position: sticky; top: 0; left: 0; right: 0; background: rgba(0,31,77,0.95); box-shadow: 0 2px 12px rgba(0,0,0,0.08); z-index: 100; }
+    .header-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; }
+    .brand { display: flex; align-items: center; gap: 14px; }
+    .brand img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; }
+    .brand-title { display: flex; flex-direction: column; line-height: 1; }
+    .brand-title .main { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 28px; color: #fff; }
+    .brand-title .sub { font-size: 16px; color: #fff; opacity: 0.95; }
+    .nav { display: flex; gap: 26px; align-items: center; }
+    .nav a { color: #fff; font-weight: 700; font-size: 16px; text-decoration: none; }
+    .nav a:hover { color: var(--brand-contrast); }
+    .contact-row { display: flex; gap: 18px; margin-top: 8px; justify-content: flex-end; color: #fff; font-size: 14px; }
+
+    /* Hero - uses a background image for GitHub Pages compatibility instead of video */
+    .hero { background: url('aabbbccdddmp4-poster.jpg') center/cover no-repeat; position: relative; }
+    .hero::after { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0.35); }
+    .hero-inner { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; padding: 80px 24px 90px; text-align: center; }
+    #animated-text { font-family: 'Playfair Display', serif; font-size: 40px; color: #fff; text-shadow: 0 2px 6px rgba(0,0,0,0.6); min-height: 56px; margin: 0 0 8px; }
+    .tagline { font-family: 'Playfair Display', serif; font-size: 28px; color: #fff; text-shadow: 0 2px 6px rgba(0,0,0,0.6); margin: 8px 0 20px; font-weight: 700; }
+    .cta-btn { font-family: 'Playfair Display', serif; font-size: 18px; color: #fff; background: var(--brand); border: 0; border-radius: 10px; padding: 12px 24px; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .cta-btn:hover { filter: brightness(1.05); }
+
+    /* Sections */
+    .container { max-width: 1100px; margin: 80px auto; padding: 0 24px; }
+
+    /* About */
+    .about-section { display: flex; flex-wrap: wrap; align-items: center; gap: 30px; margin-top: 80px; margin-bottom: 80px; }
+    .about-text { flex: 1; min-width: 300px; }
+    .about-text h2 { font-family: 'Playfair Display', serif; font-size: 3.2rem; font-weight: 900; margin: 0 0 20px; color: var(--brand); letter-spacing: .05em; }
+    .about-text p { font-size: 1.1rem; line-height: 1.8; margin: 0 0 1rem; color: #333; }
+    .about-image { flex: 1; min-width: 280px; display: flex; justify-content: center; }
+    .about-image img { max-width: 100%; border-radius: 8px; box-shadow: 0 4px 24px rgba(0,0,0,0.12); }
+
+    /* Services */
+    .services-section { padding: 90px 24px; background: #f8f9fa; }
+    .services-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 40px; }
+    .services-media { flex: 1; min-width: 320px; }
+    .services-media img { width: 100%; max-width: 520px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+    .services-text { flex: 1; min-width: 320px; }
+    .services-text h2 { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 44px; margin: 0 0 16px; color: #001f4d; }
+    .services-text p { font-size: 1.1rem; line-height: 1.8; color: #333; margin: 0 0 16px; }
+
+    /* Transform */
+    .transform-section { padding: 100px 24px; background: #fff; }
+    .transform-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 40px; }
+    .transform-media { flex: 1; min-width: 320px; }
+    .transform-media img { width: 100%; max-width: 520px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+    .transform-text { flex: 1; min-width: 320px; }
+    .transform-text h2 { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 48px; margin: 0 0 16px; color: #001f4d; }
+    .transform-text p { font-size: 1.1rem; line-height: 1.8; color: #333; margin: 0; }
+
+    /* Footer */
+    .site-footer { margin-top: 40px; padding: 20px; background: var(--brand); color: #fff; }
+    .footer-container { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 16px; }
+    .footer-left { flex: 0 0 auto; white-space: nowrap; }
+    .footer-center { flex: 1; display: flex; justify-content: center; }
+    .footer-right { flex: 0 0 320px; }
+    .social-icons { display: flex; gap: 15px; justify-content: center; }
+    .social-icons a { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; }
+    .social-icons svg { width: 22px; height: 22px; fill: #fff; opacity: .95; }
+    .social-icons a:hover svg { opacity: 1; }
+
+    /* Chat widget (no iframe for GitHub Pages; pure HTML/CSS/JS) */
+    #chatbox-container { position: fixed; bottom: 28px; right: 32px; z-index: 9999; font-family: Arial, sans-serif; }
+    #chatbox-header { background: var(--brand); color: #fff; padding: 13px 22px; border-radius: 16px 16px 0 0; cursor: pointer; font-size: 1rem; font-weight: 700; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    #chatbox-body { display: none; background: #fff; border-radius: 0 0 16px 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.13); width: 320px; max-width: 90vw; overflow: hidden; }
+    #chat-messages { height: 220px; overflow-y: auto; padding: 16px; background: #f7f8fa; border-bottom: 1px solid #e0e0e0; }
+    #chat-form { display: flex; border-top: 1px solid #e0e0e0; background: #fff; padding: 10px; gap: 8px; }
+    #chat-input { flex: 1; border: 1px solid #ccc; border-radius: 7px; padding: 7px 10px; font-size: 1rem; }
+    #chat-send-btn { background: var(--brand); color: #fff; border: none; border-radius: 7px; padding: 7px 16px; font-size: 1rem; cursor: pointer; }
+
+    /* Utilities */
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  </style>
 </head>
 <body>
+  <!-- Header -->
   <header class="site-header">
-    <h1>Platinum Virtual Partnership</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-  <main>
-    <section class="container" id="about">
-      <div class="about-section">
-        <div class="about-text">
-          <h2>About Me</h2>
-          <p>Welcome to Platinum Virtual Partnership! I'm Lyle, your dedicated executive virtual assistant. I specialize in helping busy entrepreneurs and small business owners streamline their workflow and reclaim precious time. My mission is to bring clarity, structure, and calm to your business operations so you can focus on what matters most—growing your business and enjoying life.</p>
-          <p>With years of experience supporting clients across various industries, I offer a personalized approach that adapts to your unique needs. Whether you need help with project management, administrative tasks, or optimizing your digital presence, I've got you covered.</p>
-        </div>
-        <div class="about-image">
-          <img src="aboutphoto.png" alt="Lyle, your trusted executive virtual assistant" />
+    <div class="header-inner">
+      <div class="brand">
+        <img src="logo2.png" alt="Platinum Virtual Partnership logo" />
+        <div class="brand-title">
+          <span class="main">Platinum</span>
+          <span class="sub">Virtual Partnership</span>
         </div>
       </div>
-    </section>
-    <section class="services-section" id="services">
-      <img src="ourservicesphoto.png" alt="Business workflow illustration" />
+      <div>
+        <nav class="nav" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="landing_Get Started.html" target="_blank" rel="noopener">Contact Us</a>
+        </nav>
+        <div class="contact-row" aria-label="Contact">
+          <span>contact@platinumvirtualpartnership.com</span>
+          <span>+639055558430</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero (image fallback instead of video for GH Pages) -->
+  <section class="hero" role="banner">
+    <div class="hero-inner">
+      <h2 id="animated-text" aria-live="polite"></h2>
+      <p class="tagline">I am your trusted business Ally</p>
+      <button class="cta-btn" id="get-started-btn" type="button">Get Started</button>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="container" id="about">
+    <div class="about-section">
+      <div class="about-text">
+        <h2>ABOUT ME...</h2>
+        <p>Hey there! I'm Lyle. Picture this: a bright-eyed, bushy-tailed graduate, ready to take on the world, plunging into the corporate jungle of the Philippines.</p>
+        <p>That was me, thirteen years ago. . . . . .</p>
+        <p>Fast forward to 2012, and I found myself navigating the bustling call center industry. It was a time of sharpening skills and soaking up knowledge like a sponge.</p>
+        <p>A decade later, I felt a nudge, a whisper of a dream that was calling me towards a different path. So, in 2018, I took a leap of faith. I waved goodbye to the call center hustle and said hello to the exciting world of freelancing/virtual assistance.</p>
+        <p>The journey? Not a walk in the park, I'll tell you that. But it pushed me to learn about the diverse niches in online freelancing. I plunged into training programs, sought guidance from a coach, and committed myself to never-ending learning and growth. This dedication has helped me shine in various roles across different industries.</p>
+        <p>( And now, fast forward to the present. . . )</p>
+        <p>Delivering top-notch results with a sprinkle of integrity is my jam. But what does this mean for you? Well, you're not just getting a virtual assistant. You're gaining a dedicated partner who's all in for your success. Someone who brings a treasure trove of experience, a thirst for learning, and a drive to deliver nothing but the best.</p>
+        <p>So, how about we team up and catapult your business to new heights?</p>
+        <p>Let's do this!</p>
+      </div>
+      <div class="about-image">
+        <img src="headshot.png" alt="Lyle portrait" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Services -->
+  <section class="services-section" id="services">
+    <div class="services-inner">
+      <div class="services-media">
+        <img src="ourservicesphoto.png" alt="Work from home setup illustrating our services" />
+      </div>
       <div class="services-text">
-        <h2>Our Services</h2>
+        <h2>Our Services...</h2>
         <p>Here's what I bring to the table!</p>
         <p>Ever feel like you're juggling flaming torches while riding a unicycle on a tightrope? When systems are in disarray and decisions keep landing at your feet, it's like a never-ending circus act.</p>
         <p>Things slip through the cracks, metrics get ignored, and your business can hit a standstill. Plus, the specter of burnout is always lurking in the shadows.</p>
-        <p>But what if I told you there's a way to transform your business into a well-oiled machine, humming along with confidence and calm? A way to taste success and still have time to kick back and enjoy life?</p>
-        <p>That's where I come in. My services are like a magic wand that can turn your stress into streamlined systems, your panic into profits, and carve out the breathing space you need to savor all the good stuff.</p>
+        <p>But what if I told you there's a way to transform your business into a well-oiled machine, humming along with confidence and calm? A way to taste success and still have time to kick back and enjoy a cup of coffee?</p>
+        <p>That's where I come in. My services are like a magic wand that can turn your stress into streamlined systems, your panic into profits, and carve out the breathing space you need to savor all the flavors of life.</p>
         <p>From managing your Short-Term Vacation Rental to building your website, from being your Executive Virtual Assistant to handling your bookkeeping, I've got you covered.</p>
         <p>Let's turn that circus act into a harmonious symphony, shall we?</p>
       </div>
-    </section>
-    <section class="transform-section">
-      <img src="ourservicesphoto2.png" alt="Transform your workflow illustration" />
-      <div class="transform-text">
-        <h2>Transform Your Workflow</h2>
-        <p>Streamlined solutions tailored to your goals. Think of it as trading in chaos for calm, stress for peace, and inefficiency for high productivity. Hiring someone like me is your ticket to a smoother, more productive business journey. Let me help you build systems that work, so you can focus on growth and creativity while I handle the details.</p>
+    </div>
+  </section>
+
+  <!-- Transform Your Workflow -->
+  <section class="transform-section" aria-labelledby="transform-title">
+    <div class="transform-inner">
+      <div class="transform-media">
+        <img src="ourservicesphoto2.png" alt="Calm, focused workflow" />
       </div>
-    </section>
-    <section class="container" id="contact">
-      <h2>Contact</h2>
-      <p>Ready to get started or have questions? Email me at <a href="mailto:lyle@platinumvirtual.com">lyle@platinumvirtual.com</a> and let’s connect!</p>
-    </section>
-  </main>
+      <div class="transform-text">
+        <h2 id="transform-title">Transform Your Workflow</h2>
+        <p>Streamlined solutions tailored to your goals. Think of it as trading in chaos for calm, stress for peace, and inefficiency for high productivity. Hiring someone like me is your ticket to a smoother, more efficient, and more enjoyable business journey.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer class="site-footer">
-    &copy; 2025 Platinum Virtual Partnership. All rights reserved.
+    <div class="footer-container">
+      <div class="footer-left">© 2025 Platinum Virtual Partnership. All rights reserved.</div>
+      <div class="footer-center">
+        <div class="social-icons" aria-label="Social media">
+          <!-- Inline SVGs to avoid external icon CDNs on GitHub Pages -->
+          <a href="https://www.facebook.com/lyle.vincent.cedeno.2024" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
+            <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M29 0H3C1.3 0 0 1.3 0 3v26c0 1.7 1.3 3 3 3h13V20h-4v-5h4v-3.5C16 8.4 18.5 6 22.6 6c1.8 0 3.6.3 3.6.3V10h-2c-2 0-2.6 1.2-2.6 2.5V15h5l-1 5h-4v12h5.4c1.7 0 3-1.3 3-3V3c0-1.7-1.3-3-3-3z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/lylevincentcedeno/profilecard/?igsh=YTJpM2czenJybGow" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+            <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 7.3a8.7 8.7 0 1 0 0 17.4 8.7 8.7 0 0 0 0-17.4zm0 14.3a5.6 5.6 0 1 1 0-11.2 5.6 5.6 0 0 1 0 11.2zm10.9-14.5a2.1 2.1 0 1 1-4.2 0 2.1 2.1 0 0 1 4.2 0zm6 2.1c-.1-2.1-.6-4-2.1-5.5S28.5 2.7 26.4 2.6c-2.2-.1-8.7-.1-10.9 0C13.4 2.7 11.5 3.2 10 4.7S7.9 8.1 7.8 10.2c-.1 2.2-.1 8.7 0 10.9.1 2.1.6 4 2.1 5.5s3.4 2 5.5 2.1c2.2.1 8.7.1 10.9 0 2.1-.1 4-.6 5.5-2.1s2-3.4 2.1-5.5c.1-2.2.1-8.7 0-10.9z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/lyle-vincent" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+            <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M29 0H3C1.3 0 0 1.3 0 3v26c0 1.7 1.3 3 3 3h26c1.7 0 3-1.3 3-3V3c0-1.7-1.3-3-3-3zM11 27H6V13h5v14zM8.5 10.9C6.9 10.9 6 9.8 6 8.5 6 7.1 7 5.9 8.6 5.9s2.5 1.2 2.5 2.6c0 1.3-.9 2.4-2.6 2.4zM27 27h-5v-7c0-1.7-.6-2.8-2.1-2.8-1.1 0-1.7.7-2 1.4-.1.2-.1.5-.1.8V27h-5s.1-12.3 0-14h5v2c.7-1.1 2-2.7 4.8-2.7 3.5 0 6.2 2.3 6.2 7.2V27z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-right"></div>
+    </div>
   </footer>
-  <!-- Chat Widget Script -->
+
+  <!-- Chat Widget (no iframe) -->
+  <div id="chatbox-container" aria-live="polite">
+    <div id="chatbox-header">Chat with us</div>
+    <div id="chatbox-body" role="region" aria-label="Chat messages and input">
+      <div id="chat-messages"></div>
+      <form id="chat-form" autocomplete="off">
+        <label for="chat-input" class="sr-only">Type your message</label>
+        <input type="text" id="chat-input" placeholder="Type your message..." autocomplete="off" />
+        <button type="submit" id="chat-send-btn">Send</button>
+      </form>
+    </div>
+  </div>
+
   <script>
+    // Typewriter text
     (function(){
-      var chatBox = document.createElement('div');
-      chatBox.style.position = 'fixed';
-      chatBox.style.bottom = '20px';
-      chatBox.style.right = '20px';
-      chatBox.style.width = '300px';
-      chatBox.style.height = '400px';
-      chatBox.style.background = '#fff';
-      chatBox.style.border = '1px solid #ccc';
-      chatBox.style.borderRadius = '10px';
-      chatBox.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-      chatBox.style.overflow = 'hidden';
-      chatBox.innerHTML = '<iframe src="chat_widget.html" style="width:100%;height:100%;border:none" sandbox></iframe>';
-      document.body.appendChild(chatBox);
+      var texts = [
+        "I streamline the workflow.",
+        "I deliver results.",
+        "I am not just providing service."
+      ];
+      var idx = 0, char = 0, del = false, el = document.getElementById('animated-text');
+      function tick(){
+        if(!el) return;
+        var t = texts[idx];
+        if(!del && char <= t.length){ el.textContent = t.substring(0, char++); setTimeout(tick, 60); }
+        else if(del && char >= 0){ el.textContent = t.substring(0, char--); setTimeout(tick, 30); }
+        else { if(!del){ del = true; setTimeout(tick, 1200); } else { del = false; idx = (idx+1)%texts.length; setTimeout(tick, 500); } }
+      }
+      tick();
+    })();
+
+    // Get Started button
+    document.getElementById('get-started-btn').addEventListener('click', function(){
+      window.open('landing_Get Started.html', '_blank');
+    });
+
+    // Simple chat widget flow: Full Name -> Email -> Reason -> 24-hour notice
+    (function(){
+      var header = document.getElementById('chatbox-header');
+      var body = document.getElementById('chatbox-body');
+      var form = document.getElementById('chat-form');
+      var input = document.getElementById('chat-input');
+      var messages = document.getElementById('chat-messages');
+      var step = 0, name = '', email = '';
+
+      function append(text, who){
+        var d = document.createElement('div');
+        d.style.margin = '6px 0';
+        d.style.textAlign = who === 'user' ? 'right' : 'left';
+        d.innerHTML = '<span style="display:inline-block;background:' + (who==='user'?'#001f4d':'#e6e6e6') + ';color:' + (who==='user'?'#fff':'#001f4d') + ';border-radius:8px;padding:7px 13px;max-width:75%;word-break:break-word;">' + text + '</span>';
+        messages.appendChild(d);
+        messages.scrollTop = messages.scrollHeight;
+      }
+
+      header.addEventListener('click', function(){
+        body.style.display = body.style.display === 'none' ? 'block' : 'none';
+        if(body.style.display === 'block' && !messages.hasChildNodes()){
+          setTimeout(function(){ append('Hi. Can I have your full name?', 'bot'); step = 1; }, 300);
+        }
+      });
+
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        var txt = input.value.trim();
+        if(!txt) return;
+        append(txt, 'user');
+        input.value='';
+        if(step === 1){ name = txt; setTimeout(function(){ append('Nice to meet you, ' + name + '. What is your email address?', 'bot'); step = 2; }, 600); return; }
+        if(step === 2){ email = txt; setTimeout(function(){ append('Great. What is the reason for contacting us?', 'bot'); step = 3; }, 600); return; }
+        if(step === 3){ setTimeout(function(){ append('Thank you. I will get back to you within 24 hours.', 'bot'); step = 4; }, 600); return; }
+        setTimeout(function(){ append('Thank you. I will get back to you within 24 hours.', 'bot'); }, 600);
+      });
     })();
   </script>
 </body>
