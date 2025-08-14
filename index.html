@@ -1,172 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Platinum Virtual Partnership</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
-<style>
-.container {
-  max-width: 1100px;
-  margin: 80px auto;
-  padding: 0 24px;
-}
-.about-section {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 30px;
-  margin-top: 80px;
-  margin-bottom: 80px;
-}
-.about-text {
-  flex: 1;
-  min-width: 300px;
-}
-.about-text h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3.2rem;
-  font-weight: 900;
-  margin-bottom: 20px;
-  color: #001f3f;
-}
-.about-text p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  margin-bottom: 1rem;
-  color: #333;
-}
-.about-image {
-  flex: 1;
-  min-width: 280px;
-  display: flex;
-  justify-content: center;
-}
-.about-image img {
-  max-width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
-}
-.services-section {
-  padding: 80px 20px;
-  background-color: #f8f9fa;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 40px;
-  margin-top: 80px;
-}
-.services-section img {
-  max-width: 500px;
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-}
-.services-text {
-  flex: 1;
-  min-width: 300px;
-}
-.services-text h2 {
-  font-family: 'Playfair Display', serif;
-  font-weight: 900;
-  font-size: 42px;
-  margin-bottom: 20px;
-  color: #001f4d;
-}
-.services-text p {
-  font-size: 18px;
-  line-height: 1.6;
-  color: #333;
-  margin-bottom: 16px;
-}
-.transform-section {
-  padding: 100px 20px;
-  background-color: #ffffff;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 40px;
-}
-.transform-section img {
-  max-width: 500px;
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-}
-.transform-text {
-  flex: 1;
-  min-width: 300px;
-}
-.transform-text h2 {
-  font-family: 'Playfair Display', serif;
-  font-weight: 900;
-  font-size: 46px;
-  margin-bottom: 20px;
-  color: #001f4d;
-}
-.transform-text p {
-  font-size: 18px;
-  line-height: 1.6;
-  color: #333;
-  margin-bottom: 16px;
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Platinum Virtual Partnership - Streamlining your workflow with executive virtual assistant services, website building, and more." />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
+  <link href="styles.css" rel="stylesheet" />
+  <title>Platinum Virtual Partnership</title>
 </head>
 <body>
-<header class="site-header">
-  <!-- existing header code -->
-</header>
-<section class="hero">
-  <!-- existing hero code -->
-</section>
-<section class="container" id="about">
-  <div class="about-section">
-    <!-- existing about content -->
-  </div>
-</section>
-<section class="services-section" id="services">
-  <img src="ourservicesphoto.png" alt="Our Services" />
-  <div class="services-text">
-    <h2>Our Services...</h2>
-    <p>Here's what I bring to the table!</p>
-    <p>Ever feel like you're juggling flaming torches while riding a unicycle on a tightrope? When systems are in disarray and decisions keep landing at your feet, it's like a never-ending circus act.</p>
-    <p>Things slip through the cracks, metrics get ignored, and your business can hit a standstill. Plus, the specter of burnout is always lurking in the shadows.</p>
-    <p>But what if I told you there's a way to transform your business into a well-oiled machine, humming along with confidence and calm? A way to taste success and still have time to kick back and enjoy a cup of coffee?</p>
-    <p>That's where I come in. My services are like a magic wand that can turn your stress into streamlined systems, your panic into profits, and carve out the breathing space you need to savor all the flavors of life.</p>
-    <p>From managing your Short-Term Vacation Rental to building your website, from being your Executive Virtual Assistant to handling your bookkeeping, I've got you covered.</p>
-    <p>Let's turn that circus act into a harmonious symphony, shall we?</p>
-  </div>
-</section>
-<section class="transform-section">
-  <img src="ourservicesphoto2.png" alt="Transform Your Workflow" />
-  <div class="transform-text">
-    <h2>Transform Your Workflow</h2>
-    <p>Streamlined solutions tailored to your goals. Think of it as trading in chaos for calm, stress for peace, and inefficiency for high productivity. Hiring someone like me is your ticket to a smoother, more efficient, and more enjoyable business journey.</p>
-  </div>
-</section>
-<footer class="site-footer">
-  <!-- existing footer code -->
-</footer>
-<script>
-// existing text animation script
-</script>
-<!-- Chat Widget Script -->
-<script>
-(function(){
-  var chatBox = document.createElement('div');
-  chatBox.style.position = 'fixed';
-  chatBox.style.bottom = '20px';
-  chatBox.style.right = '20px';
-  chatBox.style.width = '300px';
-  chatBox.style.height = '400px';
-  chatBox.style.background = '#fff';
-  chatBox.style.border = '1px solid #ccc';
-  chatBox.style.borderRadius = '10px';
-  chatBox.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-  chatBox.style.overflow = 'hidden';
-  chatBox.innerHTML = '<iframe src="chat_widget.html" style="width:100%;height:100%;border:none"></iframe>';
-  document.body.appendChild(chatBox);
-})();
-</script>
+  <header class="site-header">
+    <h1>Platinum Virtual Partnership</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <section class="container" id="about">
+      <div class="about-section">
+        <div class="about-text">
+          <h2>About Me</h2>
+          <p>Welcome to Platinum Virtual Partnership! I'm Lyle, your dedicated executive virtual assistant. I specialize in helping busy entrepreneurs and small business owners streamline their workflow and reclaim precious time. My mission is to bring clarity, structure, and calm to your business operations so you can focus on what matters most—growing your business and enjoying life.</p>
+          <p>With years of experience supporting clients across various industries, I offer a personalized approach that adapts to your unique needs. Whether you need help with project management, administrative tasks, or optimizing your digital presence, I've got you covered.</p>
+        </div>
+        <div class="about-image">
+          <img src="aboutphoto.png" alt="Lyle, your trusted executive virtual assistant" />
+        </div>
+      </div>
+    </section>
+    <section class="services-section" id="services">
+      <img src="ourservicesphoto.png" alt="Business workflow illustration" />
+      <div class="services-text">
+        <h2>Our Services</h2>
+        <p>Here's what I bring to the table!</p>
+        <p>Ever feel like you're juggling flaming torches while riding a unicycle on a tightrope? When systems are in disarray and decisions keep landing at your feet, it's like a never-ending circus act.</p>
+        <p>Things slip through the cracks, metrics get ignored, and your business can hit a standstill. Plus, the specter of burnout is always lurking in the shadows.</p>
+        <p>But what if I told you there's a way to transform your business into a well-oiled machine, humming along with confidence and calm? A way to taste success and still have time to kick back and enjoy life?</p>
+        <p>That's where I come in. My services are like a magic wand that can turn your stress into streamlined systems, your panic into profits, and carve out the breathing space you need to savor all the good stuff.</p>
+        <p>From managing your Short-Term Vacation Rental to building your website, from being your Executive Virtual Assistant to handling your bookkeeping, I've got you covered.</p>
+        <p>Let's turn that circus act into a harmonious symphony, shall we?</p>
+      </div>
+    </section>
+    <section class="transform-section">
+      <img src="ourservicesphoto2.png" alt="Transform your workflow illustration" />
+      <div class="transform-text">
+        <h2>Transform Your Workflow</h2>
+        <p>Streamlined solutions tailored to your goals. Think of it as trading in chaos for calm, stress for peace, and inefficiency for high productivity. Hiring someone like me is your ticket to a smoother, more productive business journey. Let me help you build systems that work, so you can focus on growth and creativity while I handle the details.</p>
+      </div>
+    </section>
+    <section class="container" id="contact">
+      <h2>Contact</h2>
+      <p>Ready to get started or have questions? Email me at <a href="mailto:lyle@platinumvirtual.com">lyle@platinumvirtual.com</a> and let’s connect!</p>
+    </section>
+  </main>
+  <footer class="site-footer">
+    &copy; 2025 Platinum Virtual Partnership. All rights reserved.
+  </footer>
+  <!-- Chat Widget Script -->
+  <script>
+    (function(){
+      var chatBox = document.createElement('div');
+      chatBox.style.position = 'fixed';
+      chatBox.style.bottom = '20px';
+      chatBox.style.right = '20px';
+      chatBox.style.width = '300px';
+      chatBox.style.height = '400px';
+      chatBox.style.background = '#fff';
+      chatBox.style.border = '1px solid #ccc';
+      chatBox.style.borderRadius = '10px';
+      chatBox.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+      chatBox.style.overflow = 'hidden';
+      chatBox.innerHTML = '<iframe src="chat_widget.html" style="width:100%;height:100%;border:none" sandbox></iframe>';
+      document.body.appendChild(chatBox);
+    })();
+  </script>
 </body>
 </html>
