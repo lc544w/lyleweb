@@ -25,6 +25,8 @@ body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#0f172a;background:va
 .contact-item img{width:20px;height:20px}
 .icon-white{filter:invert(1)}
 .icon-whatsapp{filter: invert(38%) sepia(98%) saturate(749%) hue-rotate(85deg) brightness(95%) contrast(92%)}
+
+/* Hero */
 .hero{position:relative;padding-top:120px;min-height:60vh;padding-bottom:80px}
 .video-bg{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-1;opacity:.8;filter:blur(8px)}
 .hero-inner{max-width:1100px;margin:0 auto;padding:60px 24px;text-align:center}
@@ -32,13 +34,28 @@ body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#0f172a;background:va
 .tagline{font-family:'Playfair Display',Arial,sans-serif;font-size:32px;color:#fff;margin:8px 0 20px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,0.6)}
 .cta-btn{font-family:'Playfair Display',Arial,sans-serif;font-size:22px;color:#fff;background:#001f3f;border:0;border-radius:10px;padding:12px 28px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.08);transition:transform .15s}
 .cta-btn:hover{transform:translateY(-1px)}
+
+/* Containers */
 .container{max-width:1100px;margin:80px auto;padding:0 24px}
+
+/* About */
 .about-section{display:flex;flex-wrap:wrap;align-items:center;gap:30px;margin-top:80px;margin-bottom:80px}
 .about-text{flex:1;min-width:300px}
-.about-text h2{font-family:'Playfair Display',serif;font-size:3.2rem;font-weight:900;margin-bottom:20px;color:#001f3f;letter-spacing:0.05em}
+.about-text h2{font-family:'Playfair Display',serif;font-size:3.2rem;font-weight:900;margin-bottom:20px;color:#001f3f;letter-spacing:.05em}
 .about-text p{font-size:1.1rem;line-height:1.8;margin-bottom:1rem;color:#333}
 .about-image{flex:1;min-width:280px;display:flex;justify-content:center}
 .about-image img{max-width:100%;border-radius:8px;box-shadow:0 4px 24px rgba(0,0,0,.12)}
+
+/* Services (continues the page, with extra spacing) */
+.services-section{padding:80px 24px;background:#f8f9fa}
+.services-inner{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:40px}
+.services-media{flex:1;min-width:320px}
+.services-media img{width:100%;max-width:520px;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,.1)}
+.services-text{flex:1;min-width:320px}
+.services-text h2{font-family:'Playfair Display',serif;font-weight:900;font-size:2.6rem;margin:0 0 16px;color:#001f4d}
+.services-text p{font-size:1.1rem;line-height:1.8;color:#333;margin:0 0 16px}
+
+/* Footer */
 .site-footer{margin-top:40px;padding:20px;background:#001f3f;color:#fff}
 .footer-container{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:16px}
 .footer-left{flex:0 0 auto;white-space:nowrap}
@@ -82,6 +99,7 @@ body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#0f172a;background:va
     </div>
   </div>
 </header>
+
 <section class="hero">
   <video class="video-bg" autoplay muted loop playsinline>
     <source src="aabbbccdddmp4.mp4" type="video/mp4" />
@@ -92,6 +110,7 @@ body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#0f172a;background:va
     <button class="cta-btn" id="get-started-btn">Get Started</button>
   </div>
 </section>
+
 <section class="container" id="about">
   <div class="about-section">
     <div class="about-text">
@@ -111,6 +130,27 @@ body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#0f172a;background:va
     </div>
   </div>
 </section>
+
+<!-- Our Services (right after About Me, with ample spacing) -->
+<section class="services-section" id="services">
+  <div class="services-inner">
+    <div class="services-media">
+      <!-- Upload your realistic WFH image to your hosting with this name -->
+      <img src="home-office-setup.jpg" alt="Work from home setup for virtual services" />
+    </div>
+    <div class="services-text">
+      <h2>Our Services...</h2>
+      <p>Here's what I bring to the table!</p>
+      <p>Ever feel like you're juggling flaming torches while riding a unicycle on a tightrope? When systems are in disarray and decisions keep landing at your feet, it's like a never-ending circus act.</p>
+      <p>Things slip through the cracks, metrics get ignored, and your business can hit a standstill. Plus, the specter of burnout is always lurking in the shadows.</p>
+      <p>But what if I told you there's a way to transform your business into a well-oiled machine, humming along with confidence and calm? A way to taste success and still have time to kick back and enjoy a cup of coffee?</p>
+      <p>That's where I come in. My services are like a magic wand that can turn your stress into streamlined systems, your panic into profits, and carve out the breathing space you need to savor all the flavors of life.</p>
+      <p>From managing your Short-Term Vacation Rental to building your website, from being your Executive Virtual Assistant to handling your bookkeeping, I've got you covered.</p>
+      <p>Let's turn that circus act into a harmonious symphony, shall we?</p>
+    </div>
+  </div>
+</section>
+
 <footer class="site-footer">
   <div class="footer-container">
     <div class="footer-left">© 2025 Platinum Virtual Partnership. All rights reserved.</div>
@@ -130,6 +170,7 @@ body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#0f172a;background:va
     <div class="footer-right"></div>
   </div>
 </footer>
+
 <script>
 const texts=["I streamline the workflow.","I deliver results.","I am not just providing service."];
 let idx=0,char=0,isDeleting=false;const el=document.getElementById('animated-text');
