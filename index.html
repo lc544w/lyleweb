@@ -19,18 +19,30 @@
     .brand-title { display: flex; flex-direction: column; line-height: 1; }
     .brand-title .main { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 28px; color: #fff; }
     .brand-title .sub { font-size: 16px; color: #fff; opacity: 0.95; }
+
     .nav { display: flex; gap: 26px; align-items: center; padding: 0 24px 12px; }
     .nav a { color: #fff; font-weight: 700; font-size: 16px; text-decoration: none; }
     .nav a:hover { color: var(--brand-contrast); }
+
     .contact-row { display: flex; gap: 18px; padding: 0 24px 12px; justify-content: flex-end; color: #fff; font-size: 14px; align-items: center; flex-wrap: wrap; }
-    .contact-item { display: inline-flex; align-items: center; gap: 8px; }
+    .contact-item { display: inline-flex; align-items: center; gap: 8px; color:#fff; text-decoration:none; }
+    .contact-item:hover { color: var(--brand-contrast); }
     .contact-item svg { width: 18px; height: 18px; fill: #fff; }
 
-    /* Make contact links clickable without changing style */
-    .contact-item { color:#fff; text-decoration:none; }
-    .contact-item:hover { color: var(--brand-contrast); }
+    /* Mobile menu button (hidden on desktop) */
+    .nav-toggle {
+      display: none;
+      margin: 0 24px 10px auto;
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.6);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
 
-    /* Desktop layout so contact is top-right and nav directly under it */
+    /* Desktop layout: contact top-right, nav under contact */
     @media (min-width: 900px) {
       .header-inner {
         display: grid;
@@ -51,6 +63,19 @@
         justify-content: flex-end;
         padding-top: 0;
       }
+    }
+
+    /* Mobile-first tweaks */
+    @media (max-width: 899px) {
+      /* Stack elements and center contact; keep the same visual style */
+      .header-inner { display: flex; flex-direction: column; align-items: stretch; }
+      .brand { padding-bottom: 4px; }
+      .contact-row { justify-content: center; padding-top: 4px; }
+      .nav-toggle { display: inline-block; }
+      /* Collapse nav by default on mobile; expand when .nav--open is applied */
+      .nav { display: none; flex-wrap: wrap; justify-content: center; padding: 8px 16px 16px; gap: 18px; }
+      .nav.nav--open { display: flex; }
+      .nav a { padding: 6px 0; }
     }
 
     /* Hero with autoplay background video */
@@ -126,12 +151,17 @@
           <span class="sub">Virtual Partnership</span>
         </div>
       </div>
-      <nav class="nav" aria-label="Primary">
+
+      <!-- Mobile menu button -->
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" id="navToggle">Menu</button>
+
+      <nav class="nav" id="primary-nav" aria-label="Primary">
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="landing_Get Started.html" target="_blank" rel="noopener">Contact Us</a>
         <a href="landing_Blog.html" target="_blank" rel="noopener">Blog</a>
       </nav>
+
       <div class="contact-row" aria-label="Contact">
         <a class="contact-item" href="mailto:contact@platinumvirtualpartnership.com" title="Email" aria-label="Email">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 2v.01L12 13 4 6.01V6h16zM4 18V8l8 7 8-7v10H4z"/></svg>
@@ -220,7 +250,7 @@
             <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M29 0H3C1.3 0 0 1.3 0 3v26c0 1.7 1.3 3 3 3h13V20h-4v-5h4v-3.5C16 8.4 18.5 6 22.6 6c1.8 0 3.6.3 3.6.3V10h-2c-2 0-2.6 1.2-2.6 2.5V15h5l-1 5h-4v12h5.4c1.7 0 3-1.3 3-3V3c0-1.7-1.3-3-3-3z"/></svg>
           </a>
           <a href="https://www.instagram.com/lylevincentcedeno/profilecard/?igsh=YTJpM2czenJybGow" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
-            <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 7.3a8.7 8.7 0 1 0 0 17.4 8.7 8.7 0 0 0 0-17.4zm0 14.3a5.6 5.6 0 1 1 0-11.2 5.6 5.6 0 0 1 0 11.2zm10.9-14.5a2.1 2.1 0 1 1-4.2 0 2.1 2.1 0 0 1 4.2 0zm6 2.1c-.1-2.1-.6-4-2.1-5.5S28.5 2.7 26.4 2.6c-2.2-.1-8.7-.1-10.9 0C13.4 2.7 11.5 3.2 10 4.7S7.9 8.1 7.8 10.2c-.1 2.2-.1 8.7 0 10.9.1 2.1.6 4 2.1 5.5s3.4 2 5.5 2.1c2.2.1 8.7.1 10.9 0 2.1-.1 4-.6 5.5-2.1s2-3.4 2.1-5.5c.1-2.2.1-8.7 0-10.9z"/></svg>
+            <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 7.3a8.7 8.7 0 1 0 0 17.4 8.7 8.7 0 0 0 0-17.4zm0 14.3a5.6 5.6 0 1 1 0-11.2 5.6 5.6 0 0 1 0 11.2zm10.9-14.5a2.1 2.1 0 1 1-4.2 0 2.1 2.1 0 0 1 4.2 0zm6 2.1c-.1-2.1-.6-4-2.1-5.5S28.5 2.7 26.4 2.6c-2.2-.1-8.7-.1-10.9 0C13.4 2.7 11.5 3.2 10 4.7S7.9 8.1 7.8 10.2c-.1 2.2-.1 8.7 0 10.9z"/></svg>
           </a>
           <a href="https://www.linkedin.com/in/lyle-vincent" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
             <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M29 0H3C1.3 0 0 1.3 0 3v26c0 1.7 1.3 3 3 3h26c1.7 0 3-1.3 3-3V3c0-1.7-1.3-3-3-3zM11 27H6V13h5v14zM8.5 10.9C6.9 10.9 6 9.8 6 8.5 6 7.1 7 5.9 8.6 5.9s2.5 1.2 2.5 2.6c0 1.3-.9 2.4-2.6 2.4zM27 27h-5v-7c0-1.7-.6-2.8-2.1-2.8-1.1 0-1.7.7-2 1.4-.1.2-.1.5-.1.8V27h-5s.1-12.3 0-14h5v2c.7-1.1 2-2.7 4.8-2.7 3.5 0 6.2 2.3 6.2 7.2V27z"/></svg>
@@ -245,6 +275,18 @@
   </div>
 
   <script>
+    // Mobile menu toggle
+    (function(){
+      var btn = document.getElementById('navToggle');
+      var nav = document.getElementById('primary-nav');
+      if(btn && nav){
+        btn.addEventListener('click', function(){
+          var open = nav.classList.toggle('nav--open');
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      }
+    })();
+
     // Typewriter text
     (function(){
       var texts = [
